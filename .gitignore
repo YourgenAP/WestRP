@@ -1,3 +1,3 @@
-txData
-start_5166_default.bat
-cache
+$GIT_DIR/txData
+$GIT_DIR/start_5166_default.bat
+$GIT_DIR/cache
