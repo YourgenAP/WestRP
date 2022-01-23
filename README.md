@@ -19,4 +19,4 @@ https://docs.fivem.net/docs/ - общая база данных
 https://docs.fivem.net/docs/game-references/ - база данных пропов FiveM (GTA V)
 https://forum.cfx.re/c/redm-server-development/63 - форум разработчиков серверов RedM
 https://docs.fivem.net/docs/scripting-manual/introduction/creating-your-first-script/ - как писать скрипты на LUA
-https://docs.fivem.net/natives/ - все функции, доступные в библиотеке CitizenFX
+https://vespura.com/doc/natives/ - все функции, доступные в библиотеке CitizenFX
