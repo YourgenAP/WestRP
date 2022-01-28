@@ -1,7 +1,7 @@
 {
   "global": {
     "serverName": "RedM_dev",
-    "language": "ru",
+    "language": "en",
     "menuEnabled": true,
     "menuAlignRight": false,
     "menuPageKey": "Tab"
@@ -34,8 +34,11 @@
     "statusMessage": "**IP:** `change-me:<port>`\n**Players:** <players>\n**Uptime:** <uptime>"
   },
   "fxRunner": {
-    "serverDataPath": "E:/Projects/RedMServer/server-data/",
-    "cfgPath": "E:/Projects/RedMServer/server-data/server.cfg",
-    "autostart": true
+    "serverDataPath": "E:/Projects/RedMServer/WestRP/server-data/",
+    "cfgPath": "E:/Projects/RedMServer/WestRP/server-data/server.cfg",
+    "commandLine": "",
+    "onesync": "off",
+    "autostart": true,
+    "quiet": false
   }
 }
