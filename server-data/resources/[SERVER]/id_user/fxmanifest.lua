@@ -8,3 +8,7 @@ version '1.0.0'
 resource_type 'gametype' 
 
 server_script 'server.lua'
+
+dependecies{
+    'mysql'
+}
