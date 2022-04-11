@@ -1,4 +1,4 @@
-$GIT_DIR/txData
+$GIT_DIR/txData/
 $GIT_DIR/start_5166_default.bat
-$GIT_DIR/cache
-$GIT_DIR/server-data/cache
+$GIT_DIR/cache/
+$GIT_DIR/server-data/cache/
