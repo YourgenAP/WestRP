@@ -1,0 +1,76 @@
+
+================================================================
+======== Log Rotated - 23.01.2022, 19:17:13                     
+================================================================
+
+================================================================
+======== FXServer Starting - 23.01.2022, 19:19:07               
+================================================================
+[    c-scripting-core] Creating script environments for _cfx_internal
+[ citizen-server-impl] Scanning resources.
+[    c-resources-core] Resource loading for mymode failed:
+[    c-resources-core] Could not open resource metadata file - no such file.
+[ citizen-server-impl] Found 27 resources.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for yarn
+[ citizen-server-impl] Started resource yarn
+[    c-scripting-core] Creating script environments for sessionmanager-rdr3
+[ citizen-server-impl] Started resource sessionmanager-rdr3
+[    c-scripting-core] Creating script environments for monitor
+[      script:monitor] [txAdminClient] Version 4.11.0 starting...
+[ citizen-server-impl] Started resource monitor
+[ citizen-server-impl] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for mapmanager
+[ citizen-server-impl] Started resource mapmanager
+[   script:mapmanager] Started gametype Freeroam
+[ citizen-server-impl] Started resource basic-gamemode
+[      script:monitor] [txAdminClient] Threads and commands set up. All Ready.
+[   script:mapmanager] Started map redm-map-one
+[ citizen-server-impl] Started resource redm-map-one
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://yourgen-z3bory.users.cfx.re/
+[ citizen-server-impl] -- [server notice: hostname_rework]
+[ citizen-server-impl] You don't have sv_projectName/sv_projectDesc set.
+[ citizen-server-impl] These variables augment sv_hostname and fix your server name being cut off in the server list.
+[ citizen-server-impl] Use `sets sv_projectName ..` and `sets sv_projectDesc ..` to set them.
+[ citizen-server-impl] 
+[ citizen-server-impl] [91m-- [server notice: tebex_not_set]
+[ citizen-server-impl] ================
+[ citizen-server-impl] Monetize your server using Tebex! Visit https://tebex.io/fivem for more info.
+[ citizen-server-impl] ================
+[ citizen-server-impl] 
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+> txaReportResources
+[      script:monitor] [txAdminClient] Sending resources list to txAdmin.
+> ensure "chat"
+[    c-scripting-core] Creating script environments for webpack
+[ citizen-server-impl] Started resource webpack
+[    c-scripting-core] Creating script environments for chat
+[ citizen-server-impl] Started resource chat
+[ citizen-server-impl] [97mserver thread hitch warning: timer interval of 168 milliseconds
+> txaReportResources
+[      script:monitor] [txAdminClient] Sending resources list to txAdmin.
+> ensure "player-data"
+[    c-scripting-core] Creating script environments for player-data
+[ citizen-server-impl] Started resource player-data
+[ citizen-server-impl] server thread hitch warning: timer interval of 482 milliseconds
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> txaReportResources
+[      script:monitor] [txAdminClient] Sending resources list to txAdmin.
+> setr "txAdmin-locale" "en"
+> set "txAdmin-localeFile" "E:\Projects\RedMServer\WestRP\txData\locale.json"
+> setr "txAdmin-verbose" "false"
+> set "txAdmin-checkPlayerJoin" "true"
+> set "txAdmin-menuAlignRight" "false"
+> set "txAdmin-menuPageKey" "Tab"
+> txaEvent "configChanged" "{}"
+[ citizen-server-impl] [0mServer list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> quit "Server shutting down (Yourgen)."
+[ citizen-server-main] -> Quitting: Server shutting down (Yourgen).

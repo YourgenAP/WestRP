@@ -1,0 +1,57 @@
+
+================================================================
+======== txAdmin Starting - 04.04.2022, 19:20:54                
+================================================================
+
+================================================================
+======== Log Rotated - 04.04.2022, 19:20:55                     
+================================================================
+[19:22:20] [Yourgen] logged in from 127.0.0.1 via citizenfx
+[19:35:50] [Yourgen] logged in via in-game ui
+[19:48:13] [Yourgen] restart id_user
+[19:51:19] [Yourgen] logged in via in-game ui
+[20:03:55] [Yourgen] ensure "sessionmanager"
+[20:04:54] [Yourgen] ensure "webpack"
+[20:05:07] [Yourgen] ensure "id_user"
+[20:05:29] [Yourgen] ensure "id_user"
+[20:08:32] [Yourgen] logged in via in-game ui
+[20:10:28] [Yourgen] restart id_user
+[20:10:57] [Yourgen] ensure "chat"
+[20:11:22] [Yourgen] ensure "chat"
+[20:11:28] [Yourgen] stop "webpack"
+[20:11:33] [Yourgen] ensure "chat"
+[20:12:29] [Yourgen] stop "webpack"
+[20:12:41] [Yourgen] RESTART SERVER
+[20:13:55] [Yourgen] ensure "chat"
+[20:14:12] [Yourgen] ensure "id_user"
+[20:15:30] [Yourgen] ensure "id_user"
+[20:17:55] [Yourgen] ensure "id_user"
+[20:18:23] [Yourgen] logged in via in-game ui
+[20:20:51] [Yourgen] ensure "chatRP"
+[20:23:35] [Yourgen] ensure "chatRP"
+[20:29:34] [Yourgen] ensure "chatRP"
+[20:34:16] [Yourgen] ensure "chatRP"
+[20:35:52] [Yourgen] restart cahtRP
+[20:35:58] [Yourgen] restart chatRP
+[20:37:15] [Yourgen] restart chatRP
+[20:41:06] [Yourgen] restart chatRP
+[20:43:48] [Yourgen] restart id_user
+[20:52:25] [Yourgen] restart chatRP
+[20:53:15] [Yourgen] restart chatRP
+[20:55:14] [Yourgen] restart chatRP
+[20:55:45] [Yourgen] restart chatRP
+[20:57:15] [Yourgen] restart chatRP
+[21:04:43] [Yourgen] restart chatRP
+[21:05:53] [Yourgen] restart chatRP
+[21:09:08] [Yourgen] restart chatRP
+[21:24:24] [Yourgen] restart chatRP
+[21:24:59] [Yourgen] restart chatRP
+[21:31:05] [Yourgen] restart chatRP
+[21:31:17] [Yourgen] restart chatRP
+[21:32:26] [Yourgen] RESTART SERVER
+[21:35:39] [Yourgen] logged in via in-game ui
+[21:47:27] [Yourgen] ensure "chatRP"
+[21:49:47] [Yourgen] ensure "chatRP"
+[21:51:27] [Yourgen] ensure "chatRP"
+[21:55:35] [Yourgen] logged in via in-game ui
+[22:10:45] [Yourgen] STOP SERVER

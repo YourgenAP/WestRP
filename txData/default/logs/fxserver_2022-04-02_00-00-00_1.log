@@ -1,0 +1,365 @@
+
+================================================================
+======== Log Rotated - 02.04.2022, 20:22:25                     
+================================================================
+
+================================================================
+======== FXServer Starting - 02.04.2022, 20:22:27               
+================================================================
+[    c-scripting-core] Creating script environments for _cfx_internal
+[ citizen-server-impl] Scanning resources.
+[    c-resources-core] Resource loading for mymode failed:
+[    c-resources-core] Could not open resource metadata file - no such file.
+[ citizen-server-impl] Found 32 resources.
+[          svadhesive] Authenticating server license key...
+[          svadhesive] Server license key authentication succeeded. Welcome!
+[    c-scripting-core] Creating script environments for yarn
+[ citizen-server-impl] Started resource yarn
+[    c-scripting-core] Creating script environments for sessionmanager-rdr3
+[ citizen-server-impl] Started resource sessionmanager-rdr3
+[    c-scripting-core] [0mCreating script environments for monitor
+[      script:monitor] [txAdminClient] Version 4.11.0 starting...
+[ citizen-server-impl] Started resource monitor
+[ citizen-server-impl] Started resource spawnmanager
+[    c-scripting-core] Creating script environments for mapmanager
+[ citizen-server-impl] Started resource mapmanager
+[   script:mapmanager] Started gametype Freeroam
+[ citizen-server-impl] Started resource basic-gamemode
+[    c-scripting-core] Creating script environments for mysql-async
+[ citizen-server-impl] Started resource mysql-async
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[    c-scripting-core] [0mCreating script environments for chatRP
+[ citizen-server-impl] Started resource chatRP
+[      script:monitor] [txAdminClient] Threads and commands set up. All Ready.
+[   script:mapmanager] Started map redm-map-one
+[ citizen-server-impl] Started resource redm-map-one
+[ citizen-server-impl]         fff                          
+[ citizen-server-impl]   cccc ff   xx  xx     rr rr    eee  
+[ citizen-server-impl] cc     ffff   xx       rrr  r ee   e 
+[ citizen-server-impl] cc     ff     xx   ... rr     eeeee  
+[ citizen-server-impl]  ccccc ff   xx  xx ... rr      eeeee 
+[ citizen-server-impl]                                      
+[ citizen-server-impl] Authenticated with cfx.re Nucleus: https://danilakn-758b7a.users.cfx.re/
+[ citizen-server-impl] -- [server notice: hostname_rework]
+[ citizen-server-impl] You don't have sv_projectName/sv_projectDesc set.
+[ citizen-server-impl] These variables augment sv_hostname and fix your server name being cut off in the server list.
+[ citizen-server-impl] Use `sets sv_projectName ..` and `sets sv_projectDesc ..` to set them.
+[ citizen-server-impl] 
+[ citizen-server-impl] -- [server notice: tebex_not_set]
+[ citizen-server-impl] ================
+[ citizen-server-impl] Monetize your server using Tebex! Visit https://tebex.io/fivem for more info.
+[ citizen-server-impl] ================
+[ citizen-server-impl] 
+[  script:mysql-async] [mysql-async] [SUCCESS] Database server connection established.
+> txaEvent "adminsUpdated" "[]"
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] nil
+[  script:mysql-async] [MariaDB:10.4.22-MariaDB] [WARNING] [id_user] [678ms] SELECT id FROM main WHERE fivem = ? : ["fivem:3653355"]
+[    c-scripting-core] InvokeNative: execution failed: Argument at index 1 was null.
+[      script:id_user] [0mSCRIPT ERROR: Execution of native 000000002f7a49e6 in script host failed: Argument at index 1 was null.
+[  script:mysql-async] [MariaDB:10.4.22-MariaDB] [WARNING] [id_user] [184ms] SELECT value FROM state WHERE info = ? : ["id"]
+[      script:id_user] 1
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] nil
+[    c-scripting-core] InvokeNative: execution failed: Argument at index 1 was null.
+[      script:id_user] SCRIPT ERROR: Execution of native 000000002f7a49e6 in script host failed: Argument at index 1 was null.
+[      script:id_user] 1
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id-user
+[ citizen-server-impl] Couldn't find resource id-user.
+> restart user-id
+[ citizen-server-impl] Couldn't find resource user-id.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[    c-scripting-core] InvokeNative: execution failed: Argument at index 1 was null.
+[      script:id_user] SCRIPT ERROR: Execution of native 000000002f7a49e6 in script host failed: Argument at index 1 was null.
+[      script:id_user] 1
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id-user
+[ citizen-server-impl] Couldn't find resource id-user.
+> restart id_user
+[ citizen-server-impl] [0mStopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] [91mServer list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] nil
+[    c-scripting-core] InvokeNative: execution failed: Argument at index 1 was null.
+[      script:id_user] SCRIPT ERROR: Execution of native 000000002f7a49e6 in script host failed: Argument at index 1 was null.
+[      script:id_user] 1
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[38;5;73m[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] nil
+[    c-scripting-core] InvokeNative: execution failed: Argument at index 1 was null.
+[      script:id_user] SCRIPT ERROR: Execution of native 000000002f7a49e6 in script host failed: Argument at index 1 was null.
+[      script:id_user] 1
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] fivem	3653355
+[    c-scripting-core] InvokeNative: execution failed: Argument at index 1 was null.
+[      script:id_user] [91mSCRIPT ERROR: Execution of native 000000002f7a49e6 in script host failed: Argument at index 1 was null.
+[      script:id_user] 1
+[ citizen-server-impl] [0mServer list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] [0mServer list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] fivem	3653355
+[    c-scripting-core] InvokeNative: execution failed: Argument at index 1 was null.
+[      script:id_user] SCRIPT ERROR: Execution of native 000000002f7a49e6 in script host failed: Argument at index 1 was null.
+[      script:id_user] 1
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] server thread hitch warning: timer interval of 1617 milliseconds
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[    c-scripting-core] InvokeNative: execution failed: Argument at index 1 was null.
+[      script:id_user] SCRIPT ERROR: Execution of native 000000002f7a49e6 in script host failed: Argument at index 1 was null.
+[      script:id_user] 1
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] 1
+[      script:id_user] Yourgen	3653355	1
+[  script:mysql-async] [MariaDB:10.4.22-MariaDB] [WARNING] [id_user] [296ms] UPDATE state SET value = ? WHERE info = ? : [2,"id"]
+[  script:mysql-async] [MariaDB:10.4.22-MariaDB] [WARNING] [id_user] [524ms] INSERT INTO main VALUES (?, ?, ?) : ["3653355","1","Yourgen"]
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] [0mServer list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] server thread hitch warning: timer interval of 2209 milliseconds
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] Yourgen	nil
+[      script:id_user] 1
+[      script:id_user] Yourgen	3653355	1
+[  script:mysql-async] [MariaDB:10.4.22-MariaDB] [WARNING] [id_user] [315ms] INSERT INTO main VALUES (?, ?, ?) : ["3653355","1","Yourgen"]
+[  script:mysql-async] [MariaDB:10.4.22-MariaDB] [WARNING] [id_user] [581ms] UPDATE state SET value = ? WHERE info = ? : [2,"id"]
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] [0mCreating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] nil	nil
+[      script:id_user] 2
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] [0mStopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[38;5;193m[      script:id_user] nil	nil
+[      script:id_user] 2
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] server thread hitch warning: timer interval of 267 milliseconds
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+> restart id_user
+[ citizen-server-impl] [0mStopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] server thread hitch warning: timer interval of 217 milliseconds
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] server thread hitch warning: timer interval of 694 milliseconds
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] nil	nil
+[      script:id_user] 2
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] server thread hitch warning: timer interval of 329 milliseconds
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] server thread hitch warning: timer interval of 2337 milliseconds
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] nil	nil
+[      script:id_user] 2
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] server thread hitch warning: timer interval of 289 milliseconds
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] nil	nil
+[      script:id_user] 2
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] server thread hitch warning: timer interval of 6113 milliseconds
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] nil	nil
+[      script:id_user] 2
+[ citizen-server-impl] [91mServer list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+> restart id_user
+[ citizen-server-impl] Stopping resource id_user
+[    c-scripting-core] Creating script environments for id_user
+[ citizen-server-impl] Started resource id_user
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] A client has tried to authenticate using Steam, but `steam_webApiKey` is unset. Please set steam_webApiKey to a Steam Web API key as registered on Valve's https://steamcommunity.com/dev/apikey web page. Steam identifier information will be unavailable otherwise.
+[ citizen-server-impl] To suppress this message, `set steam_webApiKey "none"`.
+[      script:id_user] fivem:3653355
+[      script:id_user] nil	nil
+[      script:id_user] 2
+[ citizen-server-impl] Server list query returned an error: System.Threading.Tasks.TaskCanceledException: The operation was canceled. <- System.TimeoutException: The operation was canceled. <- System.Threading.Tasks.TaskCanceledException: The request was canceled due to the configured HttpClient.Timeout of 30 seconds elapsing.
+[ citizen-server-impl] network thread hitch warning: timer interval of 194 milliseconds
+[ citizen-server-main] -> Quitting: SIGHUP received

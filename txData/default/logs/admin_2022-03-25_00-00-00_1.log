@@ -1,0 +1,56 @@
+
+================================================================
+======== txAdmin Starting - 25.03.2022, 12:05:03                
+================================================================
+
+================================================================
+======== Log Rotated - 25.03.2022, 12:05:03                     
+================================================================
+
+================================================================
+======== txAdmin Starting - 25.03.2022, 12:06:45                
+================================================================
+[12:07:42] [Yourgen] logged in from 127.0.0.1 via citizenfx
+[12:09:02] [Yourgen] Editing server CFG File.
+[12:09:33] [Yourgen] refresh
+[12:10:17] [Yourgen] refresh
+[12:15:34] [Yourgen] refresh
+[12:15:48] [Yourgen] ensure "id_user"
+[12:16:52] [Yourgen] refresh
+[12:17:04] [Yourgen] ensure "id_user"
+[12:22:18] [Yourgen] ensure "id_user"
+[12:22:50] [Yourgen] ensure "id_user"
+[12:31:59] [Yourgen] ensure "id_user"
+[12:34:58] [Yourgen] RESTART SERVER
+[12:35:30] [Yourgen] Editing server CFG File.
+[12:35:42] [Yourgen] ensure "id_user"
+[12:37:05] [Yourgen] restart id_user
+[12:44:56] [Yourgen] restart id_user
+[12:46:42] [Yourgen] restart id_user
+[13:00:29] [Yourgen] restart id_user
+[13:06:19] [Yourgen] restart id_user
+[13:07:44] [Yourgen] restart id_user
+[13:20:37] [Yourgen] restart id_user
+[13:24:15] [Yourgen] ensure "id_user"
+[13:29:20] [Yourgen] restart id_user
+[13:41:21] [Yourgen] restart id_user
+
+================================================================
+======== txAdmin Starting - 25.03.2022, 20:36:33                
+================================================================
+[20:37:30] [Yourgen] logged in from 127.0.0.1 via citizenfx
+[20:44:30] [Yourgen] ensure "id_user"
+[20:46:51] [Yourgen] ensure "id_user"
+[20:50:51] [Yourgen] restart id_user
+[20:53:12] [Yourgen] restart id_user
+[21:09:53] [Yourgen] restart id_user
+[21:10:12] [Yourgen] restart id_user
+[21:17:43] [Yourgen] restart id_user
+[21:22:24] [Yourgen] restart id_user
+[21:24:53] [Yourgen] restart id_user
+[21:25:08] [Yourgen] restart id_user
+[21:30:52] [Yourgen] restart id_user
+[21:32:09] [Yourgen] restart id_user
+[21:44:47] [Yourgen] restart id_user
+[22:08:24] [Yourgen] restart id_user
+[22:10:57] [Yourgen] STOP SERVER
