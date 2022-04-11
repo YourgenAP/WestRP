@@ -1,0 +1,30 @@
+body {
+    background: none;
+}
+
+#container {
+    font-size: 30px;
+    padding: 25px;
+    color: aquamarine;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: gold;
+    height: 200px;
+    width: 350px;
+    border: 2px solid aliceblue;
+    border-radius: 4px;
+}
+
+button{
+    background-color: darksalmon;
+    padding: 12px;
+}
+
+input{
+    margin-bottom: 15px;
+    width: 90%;
+    font-size: 20px;
+    padding: 10px;
+}
