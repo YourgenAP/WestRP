@@ -6,11 +6,6 @@ ensure spawnmanager
 ensure mapmanager
 ensure basic-gamemode
 
-ensure oxmysql
-set mysql_connection_string "server=localhost;database=fivem;userid=root"
-
-ensure westrp-core
-
 # A comma-separated list of tags for your server.
 # For example:
 # - sets tags "drifting, cars, racing"
@@ -24,7 +19,7 @@ sets locale "ru-RU"
 # please DO replace root-AQ on the line ABOVE with a real language!
  
 # Set your server's hostname
-sv_hostname "WestRP Development Server"
+sv_hostname "Redm Development Server"
 
 # Add system admins
 add_ace group.admin command allow # allow all commands
@@ -42,7 +37,4 @@ sv_maxclients 32
 set steam_webApiKey ""
 
 # License key for your server (https://keymaster.fivem.net)
-sv_licenseKey cfxk_1PH9Nsh2rVcFryBSCS0oF_1CtUKx
-
-sv_enforceGameBuild 1436
-gamename rdr3
+set sv_licenseKey cfxk_1PH9Nsh2rVcFryBSCS0oF_1CtUKx
