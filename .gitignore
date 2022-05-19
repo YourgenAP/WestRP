@@ -1,7 +1,7 @@
-$GIT_DIR/txData/*
-$GIT_DIR/start_5166_default.bat
-$GIT_DIR/cache/*
-$GIT_DIR/cfx-server-data/*
-$GIT_DIR/server-files/*
-$GIT_DIR/server-data/cache/*
-$GIT_DIR/server-data/server.cfg
+txData/
+start_5166_default.bat
+cache/
+cfx-server-data/
+server-files/
+server-data/cache/
+server-data/server.cfg
