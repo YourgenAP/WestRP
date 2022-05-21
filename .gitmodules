@@ -4,3 +4,6 @@
 [submodule "server-data/resources/[VORP]/vorp_inputs-lua"]
 	path = server-data/resources/[VORP]/vorp_inputs-lua
 	url = https://github.com/VORPCORE/vorp-core-lua.git
+[submodule "server-data/resources/[VORP]/vorp-inputs-lua"]
+	path = server-data/resources/[VORP]/vorp-inputs-lua
+	url = https://github.com/VORPCORE/vorp_inputs-lua.git
