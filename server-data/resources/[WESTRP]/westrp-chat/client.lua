@@ -1,4 +1,8 @@
 --up to 7 meters
+RegisterCommand("me", function(source, args, rawCommand)
+    TriggerServerEvent("westrpChat:Me", args)
+end)
+TriggerEvent('chat:addSuggestion', '/me', 'Расстояние: до 7 метров.', {})
 RegisterNetEvent("westrpChat:Me")
 AddEventHandler("westrpChat:Me",function(id, messageTable)
     local receiverID = PlayerId()
@@ -18,10 +22,14 @@ AddEventHandler("westrpChat:Me",function(id, messageTable)
             args = messageTable
         })
     end
-
 end)
 
+
 --up to 50 meters
+RegisterCommand("mew", function(source, args, rawCommand)
+    TriggerServerEvent("westrpChat:Mew", args)
+end)
+TriggerEvent('chat:addSuggestion', '/mew', 'Расстояние: до 50 метров.', {})
 RegisterNetEvent("westrpChat:Mew")
 AddEventHandler("westrpChat:Mew",function(id, messageTable)
     local receiverID = PlayerId()
@@ -41,10 +49,14 @@ AddEventHandler("westrpChat:Mew",function(id, messageTable)
             args = messageTable
         })
     end
-
 end)
 
+
 --up to 2 meters
+RegisterCommand("mec", function(source, args, rawCommand)
+    TriggerServerEvent("westrpChat:Mec", args)
+end)
+TriggerEvent('chat:addSuggestion', '/mec', 'Расстояние: до 2 метров.', {})
 RegisterNetEvent("westrpChat:Mec")
 AddEventHandler("westrpChat:Mec",function(id, messageTable)
     local receiverID = PlayerId()
@@ -64,5 +76,4 @@ AddEventHandler("westrpChat:Mec",function(id, messageTable)
             args = messageTable
         })
     end
-
 end)

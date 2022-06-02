@@ -5,3 +5,5 @@ ensure vorp_inputs-lua
 ensure vorp_inventory-lua
 
 # ensure westrp-core
+
+ensure westrp-chat

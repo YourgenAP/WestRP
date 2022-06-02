@@ -49,7 +49,8 @@
         "GetNumPlayerIdentifiers",
         "GetPlayerIdentifier",
         "GetPlayerEndpoint",
-        "color"
+        "color",
+        "TriggerServerEvent"
     ],
     "Lua.diagnostics.disable": [
         "missing-parameter"

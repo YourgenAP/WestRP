@@ -6,52 +6,42 @@ Citizen.CreateThread(function()
 	end)
 end)
 
-RegisterCommand("me", function(source, args, rawCommand) --up to 7 meters
+RegisterNetEvent("westrpChat:Me")
+AddEventHandler("westrpChat:Me", function(args)
     local character = Core.getUser(source).getUsedCharacter
-
-    --print("test")
 
     local messageTable = {}
 
     local senderName = character.firstname.." "..character.lastname
 
     table.insert(messageTable, "^3"..senderName.." "..table.concat(args, " "))
-    --table.insert(messageTable, "^3"..table.concat(args))
 
     TriggerClientEvent("westrpChat:Me", -1, source, messageTable)
+end)
 
-end, false)
-
-RegisterCommand("mew", function(source, args, rawCommand) --up to 50 meters
+RegisterNetEvent("westrpChat:Mew")
+AddEventHandler("westrpChat:Mew", function(args)
     local character = Core.getUser(source).getUsedCharacter
-
-    --print("test")
 
     local messageTable = {}
 
     local senderName = character.firstname.." "..character.lastname
 
     table.insert(messageTable, "^5"..senderName.." "..table.concat(args, " "))
-    --table.insert(messageTable, "^3"..table.concat(args))
 
     TriggerClientEvent("westrpChat:Mew", -1, source, messageTable)
+end)
 
-end, false)
-
-RegisterCommand("mec", function(source, args, rawCommand) --up to 2 meters
+RegisterNetEvent("westrpChat:Mec")
+AddEventHandler("westrpChat:Mec", function(args)
     local character = Core.getUser(source).getUsedCharacter
-
-    --print("test")
 
     local messageTable = {}
 
     local senderName = character.firstname.." "..character.lastname
 
     table.insert(messageTable, "^6"..senderName.." "..table.concat(args, " "))
-    --table.insert(messageTable, "^3"..table.concat(args))
 
     TriggerClientEvent("westrpChat:Mec", -1, source, messageTable)
+end)
 
-end, false)
-
---RegisterCommand()
