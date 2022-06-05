@@ -20,4 +20,5 @@ https://docs.fivem.net/docs/game-references/ - база данных пропо�
 https://forum.cfx.re/c/redm-server-development/63 - форум разработчиков серверов RedM
 https://docs.fivem.net/docs/scripting-manual/introduction/creating-your-first-script/ - как писать скрипты на LUA
 https://vespura.com/doc/natives/ - все функции, доступные в библиотеке CitizenFX
+
 _Обращайте внимание на Issue с лейблом Documents! Они созданы для хранения ссылок на полезную документацию!_
