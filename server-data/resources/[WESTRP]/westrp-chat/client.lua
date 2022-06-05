@@ -14,8 +14,7 @@ AddEventHandler("westrpChat:Me",function(id, messageTable)
             multiline = true,
             args = messageTable
         }) 
-    elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(receiverID)), 
-                                    GetEntityCoords(GetPlayerPed(senderID)), true) <= 7.00 then
+    elseif #(GetEntityCoords(GetPlayerPed(receiverID))-GetEntityCoords(GetPlayerPed(senderID))) <= 7.00 then
         TriggerEvent("chat:addMessage", {
             color = {255, 0, 0},
             multiline = true,
@@ -41,8 +40,7 @@ AddEventHandler("westrpChat:Mew",function(id, messageTable)
             multiline = true,
             args = messageTable
         }) 
-    elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(receiverID)), 
-                                    GetEntityCoords(GetPlayerPed(senderID)), true) <= 50.00 then
+    elseif #(GetEntityCoords(GetPlayerPed(receiverID))-GetEntityCoords(GetPlayerPed(senderID))) <= 50.00 then
         TriggerEvent("chat:addMessage", {
             color = {255, 0, 0},
             multiline = true,
@@ -68,8 +66,7 @@ AddEventHandler("westrpChat:Mec",function(id, messageTable)
             multiline = true,
             args = messageTable
         }) 
-    elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(receiverID)), 
-                                    GetEntityCoords(GetPlayerPed(senderID)), true) <= 2.00 then
+    elseif #(GetEntityCoords(GetPlayerPed(receiverID))-GetEntityCoords(GetPlayerPed(senderID))) <= 2.00 then
         TriggerEvent("chat:addMessage", {
             color = {255, 0, 0},
             multiline = true,

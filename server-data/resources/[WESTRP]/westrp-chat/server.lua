@@ -14,7 +14,8 @@ AddEventHandler("westrpChat:Me", function(args)
 
     local senderName = character.firstname.." "..character.lastname
 
-    table.insert(messageTable, "^3"..senderName.." "..table.concat(args, " "))
+    messageTable[#messageTable+1] = "^3"..senderName.." "..table.concat(args, " ")
+    -- table.insert(messageTable, "^3"..senderName.." "..table.concat(args, " "))
 
     TriggerClientEvent("westrpChat:Me", -1, source, messageTable)
 end)
@@ -27,7 +28,8 @@ AddEventHandler("westrpChat:Mew", function(args)
 
     local senderName = character.firstname.." "..character.lastname
 
-    table.insert(messageTable, "^5"..senderName.." "..table.concat(args, " "))
+    messageTable[#messageTable+1] = "^5"..senderName.." "..table.concat(args, " ")
+    -- table.insert(messageTable, "^5"..senderName.." "..table.concat(args, " "))
 
     TriggerClientEvent("westrpChat:Mew", -1, source, messageTable)
 end)
@@ -40,7 +42,8 @@ AddEventHandler("westrpChat:Mec", function(args)
 
     local senderName = character.firstname.." "..character.lastname
 
-    table.insert(messageTable, "^6"..senderName.." "..table.concat(args, " "))
+    messageTable[#messageTable+1] = "^6"..senderName.." "..table.concat(args, " ")
+    -- table.insert(messageTable, "^6"..senderName.." "..table.concat(args, " "))
 
     TriggerClientEvent("westrpChat:Mec", -1, source, messageTable)
 end)
