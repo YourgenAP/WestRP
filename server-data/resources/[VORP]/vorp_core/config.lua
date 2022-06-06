@@ -12,8 +12,8 @@ Config = {
   initJob                  = "unemployed", -- leave it like this
   initJobGrade             = 0, -- leave it like this
   initGroup                = "user", -- leave it like this
-  Whitelist                = false, -- LEAVE TO FALSE IT'S NOT WORKING
-  AllowWhitelistAutoUpdate = false,
+  Whitelist                = true, -- LEAVE TO FALSE IT'S NOT WORKING
+  AllowWhitelistAutoUpdate = true,
   MaxCharacters            = 1, --MAX ALLOWED TO BE CREATED
   maxHealth                = 5, -- 10 is FULL 0 IS EMPTY define max outer core for players
   maxStamina               = 1, -- 10 is FULL 0 IS EMPTY define max outer core for players
@@ -43,6 +43,7 @@ Config = {
   DelHorseWebhook   = "", --DELHORSE
   HealPlayerWebhook = "", --HEALPLAYER
   ReviveWebhook     = "", --REVIVE
+  WhitelistWebhook  = "", --WHITELIST
 
   ------------------------------------------------------------------------------
   ---------------------------- VOICE -------------------------------------------
@@ -143,7 +144,7 @@ Config = {
   Langs = {
     IsConnected        = "🚫 Duplicated account connected (steam | rockstar)",
     NoSteam            = "🚫 Steam не запущен. Запустите Steam и перезапустите RedM",
-    NoInWhitelist      = "🚫 Вы не внесены в Вайтлист",
+    NoInWhitelist      = "🚫 Вы не внесены в Вайтлист. Отправьте в дискорде в канале #user-id ваш user-id: ",
     NoPermissions      = "Не хватает уровня доступа",
     CheckingIdentifier = "Проверка аккаунтов",
     LoadingUser        = "Загрузка аккаунта",
@@ -160,6 +161,9 @@ Config = {
     mustBeSeated       = "VORP: Нужно управлять!",
     wagonInFront       = "VORP: Вы должны быть в повозке или рядом с ней, чтобы удалить!",
     cantCarry          = "VORP: Нельзя нести больше оружия!",
+    Hold               = "Подожди",
+    Load               = "Загрузка",
+    Almost             = "Еще чуть-чуть..."
   },
 
 
