@@ -143,7 +143,7 @@ NUIService.NUIGetNearPlayers = function (obj)
 	for _, player in pairs(nearestPlayers) do
 		isAnyPlayerFound = true
 		table.insert(closePlayersArr, {
-			label = GetPlayerName(player),
+			label = GetPlayerServerId(player),-- show server id instead of steam name
 			player = GetPlayerServerId(player)
 		})
 	end
@@ -381,6 +381,12 @@ Citizen.CreateThread(function()
                 NUIService.OpenInv()
             end
         end
+
+		if Config.DisableDeathInventory then
+			if InInventory and IsPedDeadOrDying(PlayerPedId()) then
+				NUIService.CloseInv()
+			end
+		end
         Wait(1)
     end
 end)

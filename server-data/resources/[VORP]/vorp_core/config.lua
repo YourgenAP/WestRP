@@ -32,8 +32,8 @@ Config = {
   ---------------------------- WEBHOOK FOR EACH LOG -----------------------------
   --CHANGE THE LINKS
 
-  SetgroupWebhook   = "", --SETJOB
-  SetjobWebhook     = "", --SETGROUP
+  SetgroupWebhook   = "", --SETGROUP
+  SetjobWebhook     = "", --SETJOB
   AddmoneyWebhook   = "", --ADDMONEY
   DelMoneyWebhook   = "", --DELMONEY
   AddItemsWebhook   = "", --ADDITEMS
@@ -44,6 +44,7 @@ Config = {
   HealPlayerWebhook = "", --HEALPLAYER
   ReviveWebhook     = "", --REVIVE
   WhitelistWebhook  = "", --WHITELIST
+  BanWarnWebhook    = "", --BANS/WARNS
 
   ------------------------------------------------------------------------------
   ---------------------------- VOICE -------------------------------------------
@@ -117,6 +118,7 @@ Config = {
   KeyShowIds = "0x8CC9CD42", -- Press X
   ActiveEagleEye = true,
   ActiveDeadEye = false,
+  TimeZoneDifference = 1, -- Your time zone difference with UTC in winter time
 
   ----------------------------------------------------------------------------
   --------------------------- COMMAND PERMISSION -----------------------------
@@ -148,7 +150,12 @@ Config = {
     NoPermissions      = "Не хватает уровня доступа",
     CheckingIdentifier = "Проверка аккаунтов",
     LoadingUser        = "Загрузка аккаунта",
-    BannedUser         = "Вы в бане",
+    BannedUser         = "Вы в бане до ",
+    DateTimeFormat     = "%d/%m/%y %H:%M:%S", -- Set wished DateTimeFormat for output in ban notification
+    TimeZone           = " CET", -- Set your timezone
+    DropReasonBanned   = "Вы были забанены до ",
+    Warned             = "Вам выдан варн",
+    Unwarned           = "С вас сняли варн",
     TitleOnDead        = "Do /alertdoctor in chat to request doctors aid",
     SubTitleOnDead     = "Вы можете отправиться в больницу через %s секунд",
     RespawnIn          = "Вы отправитесь в больницу в ",
