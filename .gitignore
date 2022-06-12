@@ -5,3 +5,4 @@ cfx-server-data/
 server-files/
 server-data/cache/
 server-data/server.cfg
+.vscode/
