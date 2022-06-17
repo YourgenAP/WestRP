@@ -32,7 +32,7 @@ Config = {
   ---------------------------- WEBHOOK FOR EACH LOG -----------------------------
   --CHANGE THE LINKS
 
-  SetgroupWebhook   = "", --SETGROUP
+  SetgroupWebhook   = "https://discord.com/api/webhooks/984098145178910770/m30Uft8huCdwoTQpXENKQIqxliGGh1vcuu6ietdAoMcE8Oj8W8_RpbCrv-Z4DSCw1wS_", --SETGROUP
   SetjobWebhook     = "", --SETJOB
   AddmoneyWebhook   = "", --ADDMONEY
   DelMoneyWebhook   = "", --DELMONEY
@@ -45,7 +45,7 @@ Config = {
   ReviveWebhook     = "", --REVIVE
   WhitelistWebhook  = "", --WHITELIST
   BanWarnWebhook    = "", --BANS/WARNS
-  NewPlayerWebhook  = "", --NEWPLAYER
+  NewPlayerWebhook  = "https://discord.com/api/webhooks/985992086954336286/VBGpJR5tRxBOHDVUqVflPleknEBFyT86CLB06aMwDgByQSEsqlEe-loltn2jswWuyeDk", --NEWPLAYER
 
   ------------------------------------------------------------------------------
   ---------------------------- VOICE -------------------------------------------
