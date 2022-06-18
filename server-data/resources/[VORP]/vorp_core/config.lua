@@ -12,7 +12,7 @@ Config = {
   initJob                  = "unemployed", -- leave it like this
   initJobGrade             = 0, -- leave it like this
   initGroup                = "user", -- leave it like this
-  Whitelist                = true, -- LEAVE TO FALSE IT'S NOT WORKING
+  Whitelist                = true, 
   AllowWhitelistAutoUpdate = true,
   MaxCharacters            = 1, --MAX ALLOWED TO BE CREATED
   maxHealth                = 5, -- 10 is FULL 0 IS EMPTY define max outer core for players
@@ -61,6 +61,8 @@ Config = {
   mapTypeOnFoot   = 0, -- 0 = Off(no radar), 1 = Regular 2 = Expanded  3 = Simple(compass), for on foot
   mapTypeOnMount  = 0, -- 0 = Off(no radar), 1 = Regular 2 = Expanded  3 = Simple(compass), for on horse
   enableTypeRadar = true, --- if true the above will work, if false players can choose their radar type in the game settings.
+  Loadinscreen      = true, --ENABLE LOADING SCREENS on spawn and while spawn dead
+  LoadinScreenTimer = 10000, -- miliseconds
 
   -------------------------------------------------------------------------------
   ------------------------------- RESPAWN ---------------------------------------
@@ -171,7 +173,12 @@ Config = {
     cantCarry          = "VORP: Нельзя нести больше оружия!",
     Hold               = "Подожди",
     Load               = "Загрузка",
-    Almost             = "Еще чуть-чуть..."
+    Almost             = "Еще чуть-чуть...",
+    Holddead           = "ВЫ УМЕРЛИ",
+    Loaddead           = "Вы вышли с сервера мертвым",
+    forcedrespawn      = "ВАС ВОЗРОДИЛИ",
+    forced             = "Потому что вы вышли с сервера мертвым",
+    sit                = "Нужно сидеть",
   },
 
 
