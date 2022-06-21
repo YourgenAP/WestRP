@@ -5,6 +5,23 @@ endpoint_add_udp "0.0.0.0:30120"
 ensure spawnmanager
 ensure mapmanager
 ensure basic-gamemode
+ensure chat
+
+ensure ghmattimysql
+set mysql_connection_string "server=localhost;database=fivem;userid=root"
+
+ensure vorp_core
+ensure vorp_character
+ensure vorp_inputs
+ensure vorp_inventory
+
+ensure interiors
+ensure debug
+ensure ipl_tool
+
+ensure westrp-chat
+
+ensure noclip
 
 # A comma-separated list of tags for your server.
 # For example:
@@ -19,7 +36,7 @@ sets locale "ru-RU"
 # please DO replace root-AQ on the line ABOVE with a real language!
  
 # Set your server's hostname
-sv_hostname "Redm Development Server"
+sv_hostname "WestRP Development Server"
 
 # Add system admins
 add_ace group.admin command allow # allow all commands
@@ -34,7 +51,10 @@ sv_maxclients 32
 
 # Steam Web API key, if you want to use Steam authentication (https://steamcommunity.com/dev/apikey)
 # -> replace "" with the key
-set steam_webApiKey ""
+set steam_webApiKey 5475D17EB8A864EA84A4E8A9C9D56E3B
 
 # License key for your server (https://keymaster.fivem.net)
-set sv_licenseKey cfxk_1PH9Nsh2rVcFryBSCS0oF_1CtUKx
+sv_licenseKey cfxk_1PH9Nsh2rVcFryBSCS0oF_1CtUKx
+
+sv_enforceGameBuild 1436
+gamename rdr3

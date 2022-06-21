@@ -4,10 +4,13 @@
 
 Config  = {
 
-  Debug = true, -- if your server is live set this to false.  to true only if you are testing things
-  DevMode = true, -- if your server is live set this to false.  to true only if you are testing things (auto load inventory when script restart and before character selection. Alos add /getInv command)
+  Debug = false, -- if your server is live set this to false.  to true only if you are testing things
+  DevMode = false, -- if your server is live set this to false.  to true only if you are testing things (auto load inventory when script restart and before character selection. Alos add /getInv command)
   
-  defaultlang = "ru_lang",
+  defaultlang = "en_lang",
+  
+  -- DEATH FUNCTIONS
+  DisableDeathInventory = true, -- prevent the ability to access inventory while dead
 
    --{ I } OPEN INVENTORY
   OpenKey = 0xC1989F95, 
@@ -17,7 +20,7 @@ Config  = {
 
   -- LOGS 
   webhookavatar = "https://cdn3.iconfinder.com/data/icons/hand/500/Hand_give_thumbs_finger-512.png",
-  webhook = "",
+  webhook = "https://discord.com/api/webhooks/952537644259221544/EdqpLMoDJJx0b-eXJJn3m4cOUhktW21YY2nr-8pq8XEbsMZYEYbL8t6LO5dIzavr9tzE",
   discordid = false, -- turn to true if ur using discord whitelist 
 
   -- WEBHOOK LANGUAGE
@@ -38,18 +41,18 @@ Config  = {
   -- HOW MANY WEAPONS AND ITEMS ALLOWED PER PLAYER
   MaxItemsInInventory  = {
     Weapons = 6,
-    Items = 500,
+    Items = 50,
   },
 
  
   -- FIRST JOIN
   startItems  = {
     consumable_raspberrywater = 2, --ITEMS SAME NAME AS IN DATABASE
-    --ammorevolvernormal = 1 --AMMO SAME NAME AS I NTHE DATABASE
+    ammorevolvernormal = 1 --AMMO SAME NAME AS I NTHE DATABASE
   },
 
   startWeapons = {
-    --WEAPON_MELEE_KNIFE = {{}} --WEAPON HASH NAME
+    WEAPON_MELEE_KNIFE = {{}} --WEAPON HASH NAME
   },
 
 
@@ -57,12 +60,12 @@ Config  = {
   Weapons = {
     {
       
-      Name = "Лассо", -- TRANSLATE NAME ONLY
+      Name = "Lasso", -- TRANSLATE NAME ONLY
       HashName = "WEAPON_LASSO",
       WeaponModel  = "w_melee_lasso01"
     },
     {
-      Name = "Улучшенное лассо",
+      Name = "Reinforced Lasso",
       HashName = "WEAPON_LASSO_REINFORCED",
       WeaponModel  = "",
       AmmoHash = {},
@@ -71,7 +74,7 @@ Config  = {
       }
     },
     {
-      Name = "Нож",
+      Name = "Knife",
       HashName = "WEAPON_MELEE_KNIFE",
       WeaponModel = "w_melee_knife02",
       AmmoHash = {},
@@ -82,7 +85,7 @@ Config  = {
       }
     },
     {
-      Name = "Нож деревенский",
+      Name = "Knife Rustic",
       HashName =" WEAPON_MELEE_KNIFE_RUSTIC",
       WeaponModel = "",
       AmmoHash = {},
@@ -91,7 +94,7 @@ Config  = {
       }
     },
     {
-      Name = "Нож Ужас",
+      Name = "Knife Horror",
       HashName = "WEAPON_MELEE_KNIFE_HORROR",
       WeaponModel = "w_melee_knife02",
       AmmoHash = {},
@@ -102,77 +105,77 @@ Config  = {
       }
     },
     {
-      Name = "Нож гражданской войны",
+      Name = "Knife Civil War",
       HashName = "WEAPON_MELEE_KNIFE_CIVIL_WAR",
       WeaponModel = "w_melee_knife16",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Нож с челюстью",
+      Name = "Knife Jawbone",
       HashName = "WEAPON_MELEE_KNIFE_JAWBONE",
       WeaponModel =" w_melee_knife03",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Шахтерский нож",
+      Name = "Knife Miner",
       HashName = "WEAPON_MELEE_KNIFE_MINER",
       WeaponModel = "w_melee_knife14",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Нож Вампир",
+      Name = "Knife Vampire",
       HashName = "WEAPON_MELEE_KNIFE_VAMPIRE",
       WeaponModel = "w_melee_knife18",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Нож мясника",
+      Name = "Cleaver",
       HashName = "WEAPON_MELEE_CLEAVER",
       WeaponModel = "w_melee_hatchet02",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Топор",
+      Name = "Hachet",
       HashName = "WEAPON_MELEE_HATCHET",
       WeaponModel = "w_melee_hatchet01",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Двухсторонний топор",
+      Name = "Hachet Double Bit",
       HashName = "WEAPON_MELEE_HATCHET_DOUBLE_BIT",
       WeaponModel = "w_melee_hatchet06",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Топор лесника",
+      Name = "Hachet Hewing",
       HashName = "WEAPON_MELEE_HATCHET_HEWING",
       WeaponModel = "w_melee_hatchet05",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Топор охотника",
+      Name = "Hachet Hunter",
       HashName = "WEAPON_MELEE_HATCHET_HUNTER",
       WeaponModel = "w_melee_hatchet07",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Топор викинга",
+      Name = "Hachet Viking",
       HashName = "WEAPON_MELEE_HATCHET_VIKING",
       WeaponModel = "w_melee_hatchet04",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Томагавк",
+      Name = "Tomahawk",
       HashName = "WEAPON_THROWN_TOMAHAWK",
       WeaponModel = "w_melee_tomahawk01",
       AmmoHash = {
@@ -185,7 +188,7 @@ Config  = {
       CompsHash = {}
     },
     {
-      Name = "Древний томагавк",
+      Name = "Tomahawk Ancient",
       HashName = "WEAPON_THROWN_TOMAHAWK_ANCIENT",
       WeaponModel = "w_melee_tomahawk02",
       AmmoHash = {},
@@ -194,7 +197,7 @@ Config  = {
       }
     },
     {
-      Name = "Метательные ножи",
+      Name = "Throwing Knifes",
       HashName = "WEAPON_THROWN_THROWING_KNIVES",
       WeaponModel = "w_melee_knife05",
       AmmoHash = {
@@ -207,14 +210,14 @@ Config  = {
       CompsHash = {}
     },
     {
-      Name = "Мачете",
+      Name = "Machete",
       HashName = "WEAPON_MELEE_MACHETE",
       WeaponModel = "w_melee_machete01",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Лук",
+      Name = "Bow",
       HashName = "WEAPON_BOW",
       WeaponModel = "w_sp_bowarrow",
       AmmoHash = {
@@ -230,7 +233,7 @@ Config  = {
       CompsHash = {}
     },
     {
-      Name = "Полуавтоматический пистолет",
+      Name = "Pistol Semi-Auto",
       HashName = 'WEAPON_PISTOL_SEMIAUTO',
       WeaponModel = "w_pistol_semiauto01",
       AmmoHash = {
@@ -257,7 +260,7 @@ Config  = {
       }
     },
     {
-      Name = "Пистолет Маузер",
+      Name = "Pistol Mauser",
       HashName = "WEAPON_PISTOL_MAUSER",
       WeaponModel = "w_pistol_mauser01",
       AmmoHash = {
@@ -284,7 +287,7 @@ Config  = {
       }
     },
     {
-      Name = "Пистолет Волканик",
+      Name = "Pistol Volcanic",
       HashName = "WEAPON_PISTOL_VOLCANIC",
       WeaponModel = "w_pistol_volcanic01",
       AmmoHash = {
@@ -310,7 +313,7 @@ Config  = {
       }
     },
     {
-      Name = "Пистолет M1899",
+      Name = "Pistol M1899",
       HashName = "WEAPON_PISTOL_M1899",
       WeaponModel = "w_pistol_m189902",
       AmmoHash = {
@@ -337,7 +340,7 @@ Config  = {
       }
     },
     {
-      Name = "Револьвер Шофилда",
+      Name = "Revolver Schofield",
       HashName = "WEAPON_REVOLVER_SCHOFIELD",
       WeaponModel = "w_revolver_schofield01",
       AmmoHash = {
@@ -363,7 +366,7 @@ Config  = {
       }
     },
     {
-      Name = "Револьвер ВМФ",
+      Name = "Revolver Navy",
       HashName = "WEAPON_REVOLVER_NAVY",
       WeaponModel = "w_revolver_navy",
       AmmoHash = {
@@ -392,7 +395,7 @@ Config  = {
       }
     },
     {
-      Name = "Револьвер ВМФ",
+      Name = "Revolver Navy Crossover",
       HashName = "WEAPON_REVOLVER_NAVY_CROSSOVER",
       WeaponModel = "w_revolver_navy", -- need to find model name althoug this is not being used anyways
       AmmoHash = {
@@ -421,7 +424,7 @@ Config  = {
       }
     },
     {
-      Name = "Револьвер Лемат",
+      Name = "Revolver Lemat",
       HashName = "WEAPON_REVOLVER_LEMAT",
       WeaponModel = "w_revolver_lemat01",
       AmmoHash = {
@@ -447,7 +450,7 @@ Config  = {
       }
     },
     {
-      Name = "Револьвер двойного действия",
+      Name = "Revolver Double Action",
       HashName = "WEAPON_REVOLVER_DOUBLEACTION",
       WeaponModel = "w_revolver_doubleaction01",
       AmmoHash = {
@@ -474,7 +477,7 @@ Config  = {
       }
     },
     {
-      Name = "Ковбойский револьвер",
+      Name = "Revolver Cattleman",
       HashName = "WEAPON_REVOLVER_CATTLEMAN",
       WeaponModel = "w_revolver_cattleman01",
       AmmoHash = {
@@ -501,7 +504,7 @@ Config  = {
       }
     },
     {
-      Name = "Ковбойский револьвер мексиканский",
+      Name = "Revolver Cattleman mexican",
       HashName = "WEAPON_REVOLVER_CATTLEMAN_MEXICAN",
       WeaponModel = "w_revolver_cattleman02",
       AmmoHash = {
@@ -518,7 +521,7 @@ Config  = {
       }
     },
     {
-      Name =  "Винтовка Варминта",
+      Name =  "Varmint Rifle",
       HashName = "WEAPON_RIFLE_VARMINT",
       WeaponModel = "w_repeater_pumpaction01",
       AmmoHash = {
@@ -541,7 +544,7 @@ Config  = {
       }
     },
     {
-      Name = "Карабин Винчестер",
+      Name = "Winchester Repeater",
       HashName = "WEAPON_REPEATER_WINCHESTER",
       WeaponModel = "w_repeater_winchester01",
       AmmoHash = {
@@ -564,7 +567,7 @@ Config  = {
       }
     },
     {
-      Name = "Карабин Генри",
+      Name = "Henry Reapeater",
       HashName = "WEAPON_REPEATER_HENRY",
       WeaponModel = "w_repeater_henry01",
       AmmoHash = {
@@ -587,7 +590,7 @@ Config  = {
       }
     },
     {
-      Name = "Карабин Эванс",
+      Name = "Evans Repeater",
       HashName = "WEAPON_REPEATER_EVANS",
       WeaponModel = "w_repeater_evans01",
       AmmoHash = {
@@ -610,7 +613,7 @@ Config  = {
       }
     },
     {
-      Name = "Магазинная винтовка",
+      Name = "Carabine Reapeater",
       HashName = "WEAPON_REPEATER_CARBINE",
       WeaponModel = "w_repeater_carbine01",
       AmmoHash = {
@@ -634,7 +637,7 @@ Config  = {
       }
     },
     {
-      Name = "Винтовка с качающимся затвором",
+      Name = "Rolling Block Rifle",
       HashName = "WEAPON_SNIPERRIFLE_ROLLINGBLOCK",
       WeaponModel = "w_rifle_rollingblock01",
       AmmoHash = {
@@ -663,7 +666,7 @@ Config  = {
       }
     },
     {
-      Name = "Винтовка Каркано",
+      Name = "Carcano Rifle",
       HashName = "WEAPON_SNIPERRIFLE_CARCANO",
       WeaponModel = "w_rifle_carcano01",
       AmmoHash = {
@@ -694,7 +697,7 @@ Config  = {
       }
     },
     {
-      Name = "Винтовка Спрингфилд",
+      Name = "Springfield Rifle",
       HashName = "WEAPON_RIFLE_SPRINGFIELD",
       WeaponModel = "w_rifle_springfield01",
       AmmoHash = {
@@ -723,7 +726,7 @@ Config  = {
       }
     },
     {
-      Name = "Винтовка Элефант",
+      Name = "Elephant Rifle",
       HashName = "WEAPON_RIFLE_ELEPHANT",
       WeaponModel = "weapon_rifle_elephant",
       AmmoHash = {
@@ -740,7 +743,7 @@ Config  = {
       }
     },
     {
-      Name = "Болтовая винтовка",
+      Name = "BoltAction Rifle",
       HashName = "WEAPON_RIFLE_BOLTACTION",
       WeaponModel = "w_rifle_boltaction01",
       AmmoHash = {
@@ -764,7 +767,7 @@ Config  = {
       }
     },
     {
-      Name = "Полуавтоматический дробовик",
+      Name = "Semi-Auto Shotgun",
       HashName = "WEAPON_SHOTGUN_SEMIAUTO",
       WeaponModel = "w_shotgun_semiauto01",
       AmmoHash = {
@@ -789,7 +792,7 @@ Config  = {
       }
     },
     {
-      Name = "Обрез",
+      Name = "Sawedoff Shotgun",
       HashName = "WEAPON_SHOTGUN_SAWEDOFF",
       WeaponModel = "w_shotgun_sawed01",
       AmmoHash = {
@@ -815,7 +818,7 @@ Config  = {
       }
     },
     {
-      Name = "Магазинный дробовик",
+      Name = "Repeating Shotgun",
       HashName = "WEAPON_SHOTGUN_REPEATING",
       WeaponModel = "w_shotgun_repeating01",
       AmmoHash = {
@@ -840,7 +843,7 @@ Config  = {
       }
     },
     {
-      Name = "Двуствольный экзотический дробовик",
+      Name = "Double Barrel Exotic Shotgun",
       HashName = "WEAPON_SHOTGUN_DOUBLEBARREL_EXOTIC",
       WeaponModel = "w_shotgun_doublebarrel01",
       AmmoHash = {
@@ -858,7 +861,7 @@ Config  = {
       }
     },
     {
-      Name = "Помповый дробовик",
+      Name = "Pump Shotgun",
       HashName = "WEAPON_SHOTGUN_PUMP",
       WeaponModel = "w_shotgun_pumpaction01",
       AmmoHash = {
@@ -886,7 +889,7 @@ Config  = {
       }
     },
     {
-      Name = "Двуствольный дробовик",
+      Name = "Double Barrel Shotgun",
       HashName = "WEAPON_SHOTGUN_DOUBLEBARREL",
       WeaponModel = "w_shotgun_doublebarrel01",
       AmmoHash = {
@@ -914,7 +917,7 @@ Config  = {
       }
     },
     {
-      Name = "Камера",
+      Name = "Camera",
       HashName = "WEAPON_KIT_CAMERA",
       WeaponModel = "p_camerabox01x",
       AmmoHash = {},
@@ -925,7 +928,7 @@ Config  = {
       }
     },
     {
-      Name = "Улучшенный бинокуляр",
+      Name = "Improved Binoculars",
       HashName = "WEAPON_KIT_BINOCULARS_IMPROVED",
       WeaponModel = "",
       AmmoHash = {},
@@ -934,7 +937,7 @@ Config  = {
       }
     },
     {
-      Name = "Нож торговца",
+      Name = "Knife Trader",
       HashName = "WEAPON_MELEE_KNIFE_TRADER",
       WeaponModel = "",
       AmmoHash = {},
@@ -943,7 +946,7 @@ Config  = {
       }
     },
     {
-      Name = "Бинокуляр",
+      Name = "Binoculars",
       HashName = "WEAPON_KIT_BINOCULARS",
       WeaponModel = "",
       AmmoHash = {},
@@ -952,7 +955,7 @@ Config  = {
       }
     },
     {
-      Name = "Улучшенная камера",
+      Name = "Advanced Camera",
       HashName = "WEAPON_KIT_CAMERA_ADVANCED",
       WeaponModel = "",
       AmmoHash = {},
@@ -961,7 +964,7 @@ Config  = {
       }
     },
     {
-      Name = "Фонарь",
+      Name = "Lantern",
       HashName = "WEAPON_MELEE_LANTERN",
       WeaponModel = "" ,
       AmmoHash = {},
@@ -979,7 +982,7 @@ Config  = {
       }
     },
     {
-      Name = "Хеллоуинский фонарь",
+      Name = "Halloween Lantern",
       HashName = "WEAPON_MELEE_LANTERN_HALLOWEEN",
       WeaponModel = "",
       AmmoHash = {},
@@ -988,7 +991,7 @@ Config  = {
       }
     },
     {
-      Name = "Бутылка с ядом",
+      Name = "Poison Bottle",
       HashName = "WEAPON_THROWN_POISONBOTTLE",
       WeaponModel = "",
       AmmoHash = {},
@@ -997,7 +1000,7 @@ Config  = {
       }
     },
     {
-      Name = "Металодетектор",
+      Name = "Metal Detector",
       HashName = "WEAPON_KIT_METAL_DETECTOR",
       WeaponModel = "",
       AmmoHash = {},
@@ -1006,7 +1009,7 @@ Config  = {
       }
     },
     {
-      Name = "Динамит",
+      Name = "Dynamite",
       HashName = "WEAPON_THROWN_DYNAMITE",
       WeaponModel = "w_throw_dynamite01",
       AmmoHash = {},
@@ -1015,7 +1018,7 @@ Config  = {
       }
     },
     {
-      Name = "Молотов",
+      Name = "Molotov",
       HashName = "WEAPON_THROWN_MOLOTOV",
       WeaponModel = "w_throw_molotov01",
       AmmoHash = {},
@@ -1024,7 +1027,7 @@ Config  = {
       }
     },
     {
-      Name = "Улучшенный лук",
+      Name = "Improved Bow",
       HashName = "WEAPON_BOW_IMPROVED",
       WeaponModel = "",
       AmmoHash = {},
@@ -1033,7 +1036,7 @@ Config  = {
       }
     },
     {
-      Name = "Мачете коллекционера",
+      Name = "Machete Collector",
       HashName = "WEAPON_MELEE_MACHETE_COLLECTOR",
       WeaponModel = "",
       AmmoHash = {},
@@ -1042,7 +1045,7 @@ Config  = {
       }
     },
     {
-      Name = "Электрический фонарь",
+      Name = "Electric Lantern",
       HashName = "WEAPON_MELEE_LANTERN_ELECTRIC",
       WeaponModel = "s_interact_lantern03x_pickup",
       AmmoHash = {},
@@ -1051,7 +1054,7 @@ Config  = {
       }
     },
     {
-      Name = "Факел",
+      Name = "Torch",
       HashName = "WEAPON_MELEE_TORCH",
       WeaponModel = "s_interact_torch",
       AmmoHash = {},
@@ -1060,7 +1063,7 @@ Config  = {
       }
     },
     {
-      Name = "Кувшин",
+      Name = "Moonshine Jug",
       HashName = "WEAPON_MOONSHINEJUG_MP",
       WeaponModel = "s_interact_jug_pickup",
       AmmoHash = {},
@@ -1069,7 +1072,7 @@ Config  = {
       }
     },
     {
-      Name = "Болас",
+      Name = "Bolas",
       HashName = "WEAPON_THROWN_BOLAS",
       WeaponModel = "",
       AmmoHash = {},
@@ -1078,7 +1081,7 @@ Config  = {
       }
     },
     {
-      Name = "Болас с бражником",
+      Name = "Bolas Hawkmoth",
       HashName = "WEAPON_THROWN_BOLAS_HAWKMOTH",
       WeaponModel = "",
       AmmoHash = {},
@@ -1087,7 +1090,7 @@ Config  = {
       }
     },
     {
-      Name = "Болас с железными наконечниками",
+      Name = "Bolas Ironspiked",
       HashName = "WEAPON_THROWN_BOLAS_IRONSPIKED",
       WeaponModel = "",
       AmmoHash = {},
@@ -1096,7 +1099,7 @@ Config  = {
       }
     },
     {
-      Name = "Плетеный болас",
+      Name = "Bolas Intertwined",
       HashName = "WEAPON_THROWN_BOLAS_INTERTWINED",
       WeaponModel = "",
       AmmoHash = {},
@@ -1105,21 +1108,21 @@ Config  = {
       }
     },
     {
-      Name = "Удочка",
+      Name = "Fishing Rod",
       HashName = "WEAPON_FISHINGROD",
       WeaponModel = "w_melee_fishingpole02",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Мачете ужаса",
+      Name = "Machete Horror",
       HashName = "WEAPON_MACHETE_HORROR",
       WeaponModel = "",
       AmmoHash = {},
       CompsHash = {}
     },
     {
-      Name = "Хеллоуинский фонарь",
+      Name = "Lantern Haloween",
       HashName = "WEAPON_MELEE_LANTERN_HALOWEEN",
       WeaponModel = "" ,
       AmmoHash = {},

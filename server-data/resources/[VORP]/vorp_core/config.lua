@@ -15,8 +15,8 @@ Config = {
   Whitelist                = true, 
   AllowWhitelistAutoUpdate = true,
   MaxCharacters            = 1, --MAX ALLOWED TO BE CREATED
-  maxHealth                = 5, -- 10 is FULL 0 IS EMPTY define max outer core for players
-  maxStamina               = 1, -- 10 is FULL 0 IS EMPTY define max outer core for players
+  maxHealth                = 10, -- 10 is FULL 0 IS EMPTY define max outer core for players
+  maxStamina               = 10, -- 10 is FULL 0 IS EMPTY define max outer core for players
 
   ------------------------------------------------------------------------------
   ------------------------------ WEBHOOKS --------------------------------------
@@ -179,6 +179,7 @@ Config = {
     forcedrespawn      = "ВАС ВОЗРОДИЛИ",
     forced             = "Потому что вы вышли с сервера мертвым",
     sit                = "Нужно сидеть",
+    NotifyChar         = "После ~e~удаления ~q~персонажа пути назад не будет!"
   },
 
 
