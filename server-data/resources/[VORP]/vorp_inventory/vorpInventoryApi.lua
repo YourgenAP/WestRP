@@ -5,7 +5,7 @@ exports('vorp_inventoryApi',function()
     end
 
     self.createWeapon = function(source,weaponName,ammoaux,compaux)
-        TriggerEvent("vorpCore:registerWeapon",source,tostring(weaponName),ammoaux,compaux)
+        TriggerEvent("vorpCore:registerWeapon",source,tostring(string.upper(weaponName)),ammoaux,compaux)
     end
 
     self.giveWeapon = function(source,weaponid,target)
@@ -164,7 +164,6 @@ exports('vorp_inventoryApi',function()
     self.CloseInv = function(source) 
         TriggerClientEvent("vorp_inventory:CloseInv",source)
     end
-
     self.OpenInv = function(source)
         TriggerClientEvent("vorp_inventory:OpenInv",source)
     end

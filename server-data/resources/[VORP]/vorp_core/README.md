@@ -48,12 +48,13 @@ ensure vorp_woodcutter
 - UI to display currency such as gold cash xp token.
 - API to work with other scripts and exports
 - refer to WIKI (link bellow )
+- ace permissions and or group DB
 
 ## Bans, warns and whitelists
 
 Whitelisting, banning and warning is based on static user-ids that can be changed only in the database. 
 **Important!** Setup the *NewPlayerWebhook* to get player's user-id on first connection.
-- to ban use `/ban <user-id> <length>[h/d/w/m/y]`, where h is hours, d is days, w is weeks, m is months (30 days a month), y is years (365 days a year) or nothing for hours. Example `/ban 1 3d` for 3 days ban or `/ban 1 12h` for 12 hours ban
+- to ban use `/ban <user-id> <length>[d/w/m/y]`, where d is days, w is weeks, m is months (30 days a month), y is years (365 days a year) or nothing for hours. Example `/ban 1 3d` for 3 days ban or `/ban 1 12` for 12 hours ban
 - to ban permamnently `/ban <user-id> 0`
 - to unban `/unban <user-id>`
 - to warn `/warn <user-id>`
@@ -62,6 +63,34 @@ Whitelisting, banning and warning is based on static user-ids that can be change
 - to unwhitelist `/unwlplayer <user-id>`
 The user-id will be send to your discord **only** when *NewPlayerWebhook* is setup in config.
 ![image](https://i.imgur.com/cWlyIC8.png)
+
+# add permissions to perms.cfg
+```
+#############################################################################################
+# VORP COMMANDS YOU CAN USE DISCORD ACE PERMS and use roles as permissions. just configure it.
+#############################################################################################
+
+add_ace group.admin vorpcore.tpm.Command allow
+add_ace group.admin vorpcore.addMoney.Command allow
+add_ace group.admin vorpcore.additems.Command allow
+add_ace group.admin vorpcore.setGroup.Command allow
+add_ace group.admin vorpcore.delCurrency.Command allow
+add_ace group.admin vorpcore.addweapons.Command allow
+add_ace group.admin vorpcore.setJob.Command allow
+add_ace group.admin vorpcore.reviveplayer.Command allow
+add_ace group.admin vorpcore.delhorse.Command allow
+add_ace group.admin vorpcore.delwagons.Command allow
+add_ace group.admin vorpcore.healplayer.Command allow 
+add_ace group.admin vorpcore.wlplayer.Command allow
+add_ace group.admin vorpcore.unwlplayer.Command allow
+add_ace group.admin vorpcore.ban.Command allow
+add_ace group.admin vorpcore.unban.Command allow
+add_ace group.admin vorpcore.warn.Command allow
+add_ace group.admin vorpcore.unwarn.Command allow
+## to show the list of commands in chat
+add_ace group.admin vorpcore.showAllCommands allow
+
+```
 
 ## Note
 
