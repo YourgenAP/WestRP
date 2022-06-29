@@ -561,7 +561,7 @@ InventoryService.GiveItem = function(itemName, amount, target)
 		--NOTIFY
 
 		TriggerClientEvent("vorp:TipRight", _source, "you gave " .. amount .. " of " .. ItemsLabel .. "", 2000)
-		TriggerClientEvent("vorp:TipRight", _target, "you gave " .. amount .. " of " .. ItemsLabel .. "", 2000)
+		TriggerClientEvent("vorp:TipRight", _target, "you received " .. amount .. " of " .. ItemsLabel .. "", 2000)
 		TriggerEvent("vorpinventory:itemlog", _source, _target, itemName, amount)
 
 		TriggerClientEvent("vorp_inventory:transactionCompleted", _source)

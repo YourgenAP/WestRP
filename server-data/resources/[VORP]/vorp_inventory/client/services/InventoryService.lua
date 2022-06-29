@@ -70,6 +70,7 @@ InventoryService.onSelectedCharacter = function (charId)
 	TriggerServerEvent("vorpinventory:getInventory")
 	Wait(5000)
 	TriggerServerEvent("vorpCore:LoadAllAmmo")
+	Wait(2500)
 	print("ammo loaded")
 	TriggerEvent("vorpinventory:loaded")
 end

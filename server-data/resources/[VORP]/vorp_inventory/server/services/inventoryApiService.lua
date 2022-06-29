@@ -239,10 +239,16 @@ InventoryAPI.getWeaponBullets = function(player, cb, weaponId)
 	end
 end
 
-allplayersammo = {}
+ local allplayersammo = {}
 AddEventHandler('playerDropped', function (reason)
 	local _source = source
 	allplayersammo[_source] = nil
+end)
+RegisterServerEvent("vorpinventory:removeammo") -- new event
+AddEventHandler("vorpinventory:removeammo", function(player)
+	local _source = player
+	allplayersammo[_source]["ammo"] = {}
+	TriggerClientEvent("vorpinventory:updateuiammocount",_source,allplayersammo[_source]["ammo"])
 end)
 RegisterServerEvent("vorpinventory:getammoinfo")
 AddEventHandler("vorpinventory:getammoinfo", function()
@@ -250,6 +256,44 @@ AddEventHandler("vorpinventory:getammoinfo", function()
 	if allplayersammo[_source] ~= nil then 
 		TriggerClientEvent("vorpinventory:recammo",_source,allplayersammo[_source])
 	end
+end)
+
+RegisterServerEvent("vorpinventory:servergiveammo")
+AddEventHandler("vorpinventory:servergiveammo", function(ammotype, amount, target,maxcount)
+	local _source = source
+	local player1ammo =  allplayersammo[_source]["ammo"][ammotype]
+	local player2ammo =  allplayersammo[target]["ammo"][ammotype]
+		
+        if allplayersammo[target]["ammo"][ammotype] == nil then
+		allplayersammo[target]["ammo"][ammotype] = 0
+	end
+	if player1ammo == nil or player2ammo == nil then 
+		TriggerClientEvent("vorp_inventory:ProcessingReady", _source)
+		return
+	end
+	if 0 > (player1ammo - amount) then 
+		TriggerClientEvent("vorp:Tip", _source, _U("notenoughammo"), 2000)
+		TriggerClientEvent("vorp_inventory:ProcessingReady", _source)
+		return
+	elseif (player2ammo+amount) > maxcount then 
+		TriggerClientEvent("vorp:Tip", _source, _U("fullammoyou"), 2000)
+		TriggerClientEvent("vorp:Tip", target, _U("fullammo"), 2000)
+		TriggerClientEvent("vorp_inventory:ProcessingReady", _source)
+		return
+	end
+	allplayersammo[_source]["ammo"][ammotype] = allplayersammo[_source]["ammo"][ammotype] - amount 
+	allplayersammo[target]["ammo"][ammotype] = allplayersammo[target]["ammo"][ammotype] + amount
+	local charidentifier = allplayersammo[_source]["charidentifier"]
+	local charidentifier2 = allplayersammo[target]["charidentifier"]
+	exports.ghmattimysql:execute("UPDATE characters Set ammo=@ammo WHERE charidentifier=@charidentifier", { ['charidentifier'] = charidentifier, ['ammo'] = json.encode(allplayersammo[_source]["ammo"]) })
+	exports.ghmattimysql:execute("UPDATE characters Set ammo=@ammo WHERE charidentifier=@charidentifier", { ['charidentifier'] = charidentifier2, ['ammo'] = json.encode(allplayersammo[target]["ammo"]) })
+	TriggerClientEvent("vorpinventory:updateuiammocount",_source,allplayersammo[_source]["ammo"])
+	TriggerClientEvent("vorpinventory:updateuiammocount",target,allplayersammo[target]["ammo"])
+	TriggerClientEvent("vorpinventory:setammotoped",_source,allplayersammo[_source]["ammo"])
+	TriggerClientEvent("vorpinventory:setammotoped",target,allplayersammo[target]["ammo"])
+	TriggerClientEvent("vorp:Tip", _source, _U("transferedammo")..Config.Ammolabels[ammotype].." : "..amount, 2000)
+	TriggerClientEvent("vorp:Tip", target, _U("recammo")..Config.Ammolabels[ammotype].." : "..amount, 2000)
+	TriggerClientEvent("vorp_inventory:ProcessingReady", _source)
 end)
 
 RegisterServerEvent("vorpinventory:updateammo")
@@ -281,7 +325,6 @@ InventoryAPI.addBullets = function(player, bulletType, amount)
 	local _source = player
 	local sourceCharacter = Core.getUser(_source).getUsedCharacter
 	local charidentifier = sourceCharacter.charIdentifier
-
 	exports.ghmattimysql:execute('SELECT ammo FROM characters WHERE charidentifier = @charidentifier ' , {['charidentifier'] = charidentifier}, function(result)
 		local ammo = json.decode(result[1].ammo)
 		if ammo[bulletType] ~= nil then 
@@ -290,6 +333,7 @@ InventoryAPI.addBullets = function(player, bulletType, amount)
 			ammo[bulletType] = amount
 		end
 		allplayersammo[_source]["ammo"] = ammo
+		TriggerClientEvent("vorpinventory:updateuiammocount",_source,allplayersammo[_source]["ammo"])
 		TriggerClientEvent("vorpCoreClient:addBullets", _source, bulletType, ammo[bulletType])
 		exports.ghmattimysql:execute("UPDATE characters Set ammo=@ammo WHERE charidentifier=@charidentifier", { ['charidentifier'] = charidentifier, ['ammo'] = json.encode(ammo) })
 	end)

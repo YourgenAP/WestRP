@@ -1,9 +1,13 @@
+local loaded = false 
+local getammoinfo = false 
+local playerammoinfo = {}
+
+
 RegisterNetEvent('syn:getnuistuff')
 AddEventHandler('syn:getnuistuff', function(x,y,mon,gol)
 	local nuistuff = x 
     local player = PlayerPedId()
-
-	SendNUIMessage({
+ 	SendNUIMessage({
 		action = "changecheck",
 		check = nuistuff,
 		info = y,
@@ -13,7 +17,7 @@ AddEventHandler('syn:getnuistuff', function(x,y,mon,gol)
         show        = not IsRadarHidden(),
         money       = mon,
         gold        = gol,
-        id          = GetPlayerServerId(NetworkGetEntityOwner(player))
+        id          = GetPlayerServerId(NetworkGetEntityOwner(player)),
     })
 end)
 
@@ -32,6 +36,7 @@ if Config.DevMode then
         Wait(5000)
         TriggerServerEvent("vorpCore:LoadAllAmmo")
         print("inventory loaded")
+        Wait(2500)
         TriggerEvent("vorpinventory:loaded")
       end)
 end
@@ -48,9 +53,6 @@ function contains(table, element)
     end
 return false
 end
-local loaded = false 
-local getammoinfo = false 
-local playerammoinfo = {}
 Citizen.CreateThread(function()
 	while true do
         Wait(1)
@@ -64,7 +66,48 @@ end)
 
 RegisterNetEvent("vorpinventory:loaded")
 AddEventHandler("vorpinventory:loaded", function()
+    SendNUIMessage({
+        action      = "reclabels",
+        labels = Config.Ammolabels
+    })
+    getammoinfo = true 
+    TriggerServerEvent("vorpinventory:getammoinfo")
+    while getammoinfo do 
+        Wait(100)
+    end
+    local playerammo = playerammoinfo["ammo"]
+    SendNUIMessage({
+        action      = "updateammo",
+        ammo = playerammo
+    })
     loaded = true 
+end)
+
+RegisterNetEvent("vorpinventory:updateuiammocount")
+AddEventHandler("vorpinventory:updateuiammocount", function(ammo)
+	SendNUIMessage({
+        action      = "updateammo",
+        ammo = ammo
+    })
+    NUIService.LoadInv()
+end)
+
+RegisterNetEvent("vorpinventory:setammotoped")
+AddEventHandler("vorpinventory:setammotoped", function(ammo)
+    Citizen.InvokeNative(0xF25DF915FA38C5F3,PlayerPedId(),1,1)
+	Citizen.InvokeNative(0x1B83C0DEEBCBB214,PlayerPedId())
+    for k,v in pairs(ammo) do 
+        SetPedAmmoByType(PlayerPedId(), GetHashKey(k), v)
+    end
+end)
+
+RegisterNetEvent("vorpinventory:updateuiammocount")
+AddEventHandler("vorpinventory:updateuiammocount", function(ammo)
+	SendNUIMessage({
+        action      = "updateammo",
+        ammo = ammo
+    })
+    NUIService.LoadInv()
 end)
 RegisterNetEvent("vorpinventory:recammo")
 AddEventHandler("vorpinventory:recammo", function(ammo)
@@ -98,6 +141,10 @@ Citizen.CreateThread(function()
 		    	    		if playerammo[v] ~= qt then
 		    	    			playerammoinfo["ammo"][v] = qt
 		    	    			TriggerServerEvent("vorpinventory:updateammo",playerammoinfo)
+                                SendNUIMessage({
+                                    action      = "updateammo",
+                                    ammo = playerammo
+                                })
 		    	    		end
 		    	    	end
 		    	    end

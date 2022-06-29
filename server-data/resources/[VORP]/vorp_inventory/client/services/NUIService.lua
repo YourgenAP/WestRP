@@ -220,6 +220,15 @@ NUIService.NUIGiveItem = function(obj)
 					if isProcessingPay then return end
 					isProcessingPay = true
 					TriggerServerEvent("vorpinventory:giveGoldToPlayer", target, tonumber(data2.count))
+				elseif data2.type == "item_ammo" then 
+					if isProcessingPay then return end
+					isProcessingPay = true
+					local amount = tonumber(data2.count)
+					local ammotype = data2.item 
+					local maxcount = Config.maxammo[ammotype]
+					if amount > 0 and maxcount >= amount then 
+						TriggerServerEvent("vorpinventory:servergiveammo", ammotype, amount, target,maxcount)
+					end
 				elseif tonumber(data2.id) == 0 then
 					local amount = tonumber(data2.count)
 

@@ -83,7 +83,8 @@
         var horseid = 0
         var wagonid = 0
         var secondaryCapacityAvailable = false
-
+        let allplayerammo
+        let ammolabels
         function OverSetTitle(title) {
             document.getElementById("information").innerHTML = title;
         }
@@ -130,6 +131,15 @@
 
         window.addEventListener('message', function (event) {
 
+            if (event.data.action == "reclabels") {
+                ammolabels = event.data.labels
+            }
+            if (event.data.action == "updateammo") {
+                if (event.data.ammo) {
+                    allplayerammo = event.data.ammo
+                }
+            }
+
             if (event.data.action == "updateStatusHud") {
 
                 if (event.data.money || event.data.money === 0) {
@@ -146,10 +156,8 @@
                     $("#id-value").text("ID " + event.data.id);
 
                 }
-
+                
             }
-
-            
         });
 
         $("document").ready(function () {
@@ -723,6 +731,7 @@
                                         return;
                                     }
 
+
                                     if (!isInt(value)) {
                                         return;
                                     }
@@ -737,7 +746,6 @@
                                 }
                             });
                         } else {
-
                             $.post("http://vorp_inventory/MoveToBank", JSON.stringify({
                                 item: itemData,
                                 type: itemData.type,
@@ -1198,6 +1206,37 @@
 
         }
 
+        function giveammotoplayer(ammotype) {
+            dialog.prompt({
+                title: "Quantity",
+                button: "Accept",
+                required: true,
+                item: ammotype,
+                type: "item_ammo",
+                input: {
+                    type: "number",
+                    autofocus: "true"
+                },
+                validate: function (value, item, type) {
+                    if (!value) {
+                        dialog.close()
+                        return;
+                    }
+                     if (!isInt(value)) {
+                         return;
+                        }
+                    $.post("http://vorp_inventory/GetNearPlayers", JSON.stringify({
+                        type: type,
+                        what: "give",
+                        item: item,
+                        count: value
+                    }));
+                    return true;
+                }
+            });
+
+        }
+
         function giveGetHowManyGold() {
             dialog.prompt({
                 title: "Quantity",
@@ -1339,10 +1378,57 @@
 
             });
 
+            var gunbelt_item = "gunbelt"
+            var gunbelt_label = "Gun belt"
+            var gunbelt_desc = "Your Ammo"
+
+            $("#inventoryElement").append("<div data-label='" + gunbelt_label +
+                "' style='background-image: url(\"img/items/" + gunbelt_item +
+                ".png\"), url(); background-size: 90px 90px, 90px 90px; background-repeat: no-repeat; background-position: center;' id='item-" +
+                gunbelt_item + "' class='item'><div class='text'></div></div>")
+            var data = [];
+            for (const [ind, tab] of Object.entries(allplayerammo)) {
+                if (tab > 0) {
+                    data.push({
+                        text: `${ammolabels[ind]} : ${tab}`,
+                        action: function () {
+                            giveammotoplayer(ind);
+                        }
+                    });
+                }
+            }
+            $("#item-" + gunbelt_item).contextMenu([data], {
+                offsetX: 1,
+                offsetY: 1,
+            });
+
+
+            $("#item-" + gunbelt_item).hover(
+                function() {
+                    OverSetTitle(gunbelt_label);
+                },
+                function() {
+                    OverSetTitle(" ");
+                }
+            );
+
+            $('#item-' + gunbelt_item).hover(
+                  function() {
+                          OverSetDesc(gunbelt_desc);
+                  },
+                  function() {
+                      OverSetDesc(" ");
+                  }
+              )
+            $('#item-' + gunbelt_item).data('item', gunbelt_item);
+            $('#item-' + gunbelt_item).data('inventory', "none");
+
+            isOpen = true;
+            initDivMouseOver()
             //AddMoney
             var m_item = "money";
             var m_label = "Dollars";
-            var m_desc = "DESC DOLLAR IN HTML FILE"
+            var m_desc = "Your Cash"
 
 
             $("#inventoryElement").append("<div data-label='" + m_label +
@@ -1372,14 +1458,21 @@
                 offsetX: 1,
                 offsetY: 1,
             });
-
+            $("#item-" + m_item).hover(
+                function() {
+                    OverSetTitle(m_item);
+                },
+                function() {
+                    OverSetTitle(" ");
+                }
+            );
 
             $("#item-" + m_item).hover(
                 function () {
-                    OverSetTitle(m_label);
+                    OverSetDesc(m_desc);
                 },
                 function () {
-                    OverSetTitle(" ");
+                    OverSetDesc(" ");
                 }
             );
 
@@ -1394,7 +1487,7 @@
                   //AddGold
                   var g_item = "gold";
                   var g_label = "Gold";
-                  var g_desc = "DESC GOLD IN HTML FILE"
+                  var g_desc = "Your Gold"
       
       
                   $("#inventoryElement").append("<div data-label='" + g_label +
@@ -1436,13 +1529,13 @@
                   );
       
                   $('#item-' + g_item).hover(
-                function() {
-                        OverSetDesc(g_desc);
-                },
-                function() {
-                    OverSetDesc(" ");
-                }
-            );
+                        function() {
+                                OverSetDesc(g_desc);
+                        },
+                        function() {
+                            OverSetDesc(" ");
+                        }
+                    );
 
                   $('#item-' + g_item).data('item', g_item);
                   $('#item-' + g_item).data('inventory', "none");
