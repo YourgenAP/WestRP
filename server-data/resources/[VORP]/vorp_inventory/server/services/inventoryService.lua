@@ -402,7 +402,7 @@ InventoryService.shareMoneyPickupServer = function(obj, amount, position)
 	TriggerClientEvent("vorpInventory:shareMoneyPickupClient", -1, obj, amount, position, 1)
 
 	MoneyPickUps[obj] = {
-		name = "Dollars",
+		name = _U("inventorymoneylabel"),
 		obj = obj,
 		amount = amount,
 		inRange = false,
@@ -414,7 +414,7 @@ InventoryService.shareGoldPickupServer = function(obj, amount, position)
 	TriggerClientEvent("vorpInventory:shareGoldPickupClient", -1, obj, amount, position, 1)
 
 	GoldPickUps[obj] = {
-		name = "Gold",
+		name = _U("inventorygoldlabel"),
 		obj = obj,
 		amount = amount,
 		inRange = false,
@@ -560,8 +560,8 @@ InventoryService.GiveItem = function(itemName, amount, target)
 		local ItemsLabel = svItems[itemName]:getLabel()
 		--NOTIFY
 
-		TriggerClientEvent("vorp:TipRight", _source, "you gave " .. amount .. " of " .. ItemsLabel .. "", 2000)
-		TriggerClientEvent("vorp:TipRight", _target, "you received " .. amount .. " of " .. ItemsLabel .. "", 2000)
+		TriggerClientEvent("vorp:TipRight", _source, _U("yougive") .. amount .. _U("of") .. ItemsLabel .. "", 2000)
+		TriggerClientEvent("vorp:TipRight", _target, _U("youreceive") .. amount .. _U("of") .. ItemsLabel .. "", 2000)
 		TriggerEvent("vorpinventory:itemlog", _source, _target, itemName, amount)
 
 		TriggerClientEvent("vorp_inventory:transactionCompleted", _source)

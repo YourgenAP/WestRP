@@ -478,8 +478,38 @@ NUIService.transactionComplete = function()
 	SendNUIMessage({ action = "transaction", type = "completed" })
 end
 
+NUIService.initiateData = function()
+	-- Add Locales
+	SendNUIMessage({ action = "initiate", language = {
+		empty = _U("emptyammo"),
+		prompttitle = _U("prompttitle"),
+		promptaccept = _U("promptaccept"),
+		inventoryclose = _U("inventoryclose"),
+		inventorysearch = _U("inventorysearch"),
+		toplayerpromptitle = _U("toplayerpromptitle"),
+		toplaterpromptaccept = _U("toplaterpromptaccept"),
+		gunbeltlabel = _U("gunbeltlabel"),
+		gunbeltdescription = _U("gunbeltdescription"),
+		inventorymoneylabel = _U("inventorymoneylabel"),
+		inventorymoneydescription = _U("inventorymoneydescription"),
+		givemoney = _U("givemoney"),
+		dropmoney = _U("dropmoney"),
+		inventorygoldlabel =  _U("inventorygoldlabel"),
+		inventorygolddescription =  _U("inventorygolddescription"),
+		givegold = _U("givegold"),
+		dropgold = _U("dropgold"),
+		unequip = _U("unequip"),
+		use = _U("use"),
+		give = _U("give"),
+		drop = _U("drop")
+	}})
+end
+
 -- Main loop
 Citizen.CreateThread(function()
+	Wait(5000)
+	NUIService.initiateData()
+
 	while true do
 		if IsControlJustReleased(0, Config.OpenKey) and IsInputDisabled(0) then
 			if InInventory then

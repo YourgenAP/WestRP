@@ -557,7 +557,7 @@ InventoryAPI.registerWeapon = function(target, name, ammos, components)
 		local targetTotalWeaponCount = InventoryAPI.getUserTotalCountWeapons(targetIdentifier, targetCharId) + 1
 
 		if targetTotalWeaponCount > Config.MaxItemsInInventory.Weapons then
-			TriggerClientEvent("vorp:TipRight", _target, "Can't carry more weapons", 2000)
+			TriggerClientEvent("vorp:TipRight", _target, _U("cantweapons2"), 2000)
 			if Config.Debug then
 				Log.Warning(targetCharacter.firstname .. " " .. targetCharacter.lastname .. " ^1Can't carry more weapons^7")
 			end
@@ -625,7 +625,7 @@ InventoryAPI.giveWeapon = function(player, weaponId, target)
 
 		if sourceTotalWeaponCount > Config.MaxItemsInInventory.Weapons then
 
-			TriggerClientEvent("vorp:TipRight", _source, "Can't carry more weapons", 2000)
+			TriggerClientEvent("vorp:TipRight", _source, _U("cantweapons"), 2000)
 			if Config.Debug then
 				Log.print(sourceCharacter.firstname .. " " .. sourceCharacter.lastname .. " ^1Can't carry more weapons^7")
 			end
