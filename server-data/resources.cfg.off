@@ -1,9 +1,22 @@
+ensure spawnmanager
+ensure mapmanager
+ensure basic-gamemode
+ensure chat
 
-ensure vorp-core-lua
+ensure ghmattimysql
+set mysql_connection_string "server=localhost;database=fivem;userid=root"
+
+ensure vorp_core
 ensure vorp_character
-ensure vorp_inputs-lua
-ensure vorp_inventory-lua
+ensure vorp_inputs
+ensure vorp_inventory
+ensure vorp_admin
 
-# ensure westrp-core
+ensure interiors
+ensure debug
+ensure ipl_tool
 
 ensure westrp-chat
+ensure yap-medicine
+
+ensure noclip
