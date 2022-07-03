@@ -8,15 +8,16 @@ function DataBase()
     for _, PlayersData in pairs(players) do
         elements[#elements + 1] = {
 
-            label = "<span style= margin-left:160px;>" .. PlayersData.PlayerName .. "</span>", value = "players",
-            desc = "Steam Name: <span style=color:MediumSeaGreen;> "
-                .. PlayersData.name .. "</span><br>Server ID:  <span style=color:MediumSeaGreen;>"
-                .. PlayersData.serverId .. "</span><br> Group:  <span style=color:MediumSeaGreen;>"
-                .. PlayersData.Group .. "</span><br>Job:  <span style=color:MediumSeaGreen;>"
-                .. PlayersData.Job .. "</span> Grade:  <span style=color:MediumSeaGreen;>"
-                .. PlayersData.Grade .. "</span><br>Identifier:  <span style=color:MediumSeaGreen;>"
-                .. PlayersData.SteamId .. "</span><br> Money:  <span style=color:MediumSeaGreen;>"
-                .. PlayersData.Money .. "</span><br>Player Gold:  <span style=color:Gold;>"
+            label =  PlayersData.PlayerName, value = "players",
+            desc = _U("SteamName").."<span style=color:MediumSeaGreen;> "
+                .. PlayersData.name .. "</span><br>".._U("ServerID").."<span style=color:MediumSeaGreen;>"
+                .. PlayersData.serverId .. "</span><br>".._U("PlayerGroup").."<span style=color:MediumSeaGreen;>"
+                .. PlayersData.Group .. "</span><br>".._U("PlayerJob").."<span style=color:MediumSeaGreen;>"
+                .. PlayersData.Job .. "</span>".._U("Grade").."<span style=color:MediumSeaGreen;>"
+                .. PlayersData.Grade .. "</span><br>".._U("Identifier").."<span style=color:MediumSeaGreen;>"
+                .. PlayersData.SteamId .. "</span><br>".._U("PlayerMoney").."<span style=color:MediumSeaGreen;>"
+                .. PlayersData.Money .. "</span><br>".._U("PlayerGold").."<span style=color:Gold;>"
+                .. PlayersData.Gold .. "</span><br>".._U("PlayerStaticID").."<span style=color:Red;>"
                 .. PlayersData.Gold .. "</span>", PlayerData = PlayersData
         }
 
@@ -470,14 +471,16 @@ function RemovePlayers(PlayerData)
         end)
 end
 
-function OpenInvnetory(dataItems)
+function OpenInvnetory(inventorydata)
     MenuData.CloseAll()
     local elements = {}
 
-    elements[#elements + 1] = { label = dataItems.label ..
-        " <span style='margin-left:10px; color: Yellow;'>" .. dataItems.count .. '</span>', value = "",
-        desc = dataItems.label }
+       for _, dataItems in pairs(inventorydata) do -- to prevent menu from opening empty and give errors
 
+        elements[#elements + 1] = { label = dataItems.label ..
+            " <span style='margin-left:10px; color: Yellow;'>" .. dataItems.count .. '</span>', value = "",
+            desc = dataItems.label }
+        end
     MenuData.Open('default', GetCurrentResourceName(), 'menuapi',
         {
             title    = _U("MenuTitle"),

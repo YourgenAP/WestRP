@@ -32,34 +32,36 @@ AddEventHandler('vorp_admin:GetPlayers', function()
             local User = VorpCore.getUser(player)
             local Character = User.getUsedCharacter --get player info
             local group = Character.group
-            local playername = Character.firstname .. ' ' .. Character.lastname --player char name
-            local job = Character.job --player job
-            local identifier = Character.identifier --player steam
-            local PlayerMoney = Character.money --money
-            local PlayerGold = Character.gold --gold
-            local JobGrade = Character.jobGrade --jobgrade
-            local getid = VORPwl.getEntry(identifier).getId() -- userID this is a static ID used to whitelist or ban
-            local getstatus = VORPwl.getEntry(identifier).getStatus() -- whitelisted returns true or false
-            local warnstatus = User.getPlayerwarnings() --get players warnings
+            if Character.firstname then
+                local playername = Character.firstname .. ' ' .. Character.lastname --player char name
+                local job = Character.job --player job
+                local identifier = Character.identifier --player steam
+                local PlayerMoney = Character.money --money
+                local PlayerGold = Character.gold --gold
+                local JobGrade = Character.jobGrade --jobgrade
+                local getid = VORPwl.getEntry(identifier).getId() -- userID this is a static ID used to whitelist or ban
+                local getstatus = VORPwl.getEntry(identifier).getStatus() -- whitelisted returns true or false
+                local warnstatus = User.getPlayerwarnings() --get players warnings
 
-            data[tostring(player)] = {
-                serverId = player,
-                x = coords.x,
-                y = coords.y,
-                z = coords.z,
-                name = GetPlayerName(player),
-                Group = group,
-                PlayerName = playername,
-                Job = job,
-                SteamId = identifier,
-                ped = playerPed,
-                Money = PlayerMoney,
-                Gold = PlayerGold,
-                Grade = JobGrade,
-                staticID = tonumber(getid),
-                WLstatus = tostring(getstatus),
-                warns = tonumber(warnstatus),
-            }
+                data[tostring(player)] = {
+                    serverId = player,
+                    x = coords.x,
+                    y = coords.y,
+                    z = coords.z,
+                    name = GetPlayerName(player),
+                    Group = group,
+                    PlayerName = playername,
+                    Job = job,
+                    SteamId = identifier,
+                    ped = playerPed,
+                    Money = PlayerMoney,
+                    Gold = PlayerGold,
+                    Grade = JobGrade,
+                    staticID = tonumber(getid),
+                    WLstatus = tostring(getstatus),
+                    warns = tonumber(warnstatus),
+                }
+            end
         end
     end
     TriggerClientEvent("vorp_admin:SendPlayers", _source, data)
@@ -234,15 +236,19 @@ RegisterServerEvent("vorp_admin:givePlayer", function(targetID, type, data1, dat
                 end
             end)
         elseif type == "moneygold" then
-            local CurrencyType = data1
+         local CurrencyType = data1
             local qty = data2
-            Character.addCurrency(tonumber(CurrencyType), tonumber(qty))
-            if CurrencyType == 0 then
-                TriggerClientEvent("vorp:TipRight", targetID, _U("received") .. qty .. _U("money"), 5000)
+            if qty then
+                Character.addCurrency(tonumber(CurrencyType), tonumber(qty))
+                if CurrencyType == 0 then
+                    TriggerClientEvent("vorp:TipRight", targetID, _U("received") .. qty .. _U("money"), 5000)
+                elseif CurrencyType == 1 then
+                    TriggerClientEvent("vorp:TipRight", targetID, _U("received") .. qty .. _U("gold"), 5000)
+                end
+                TriggerClientEvent("vorp:TipRight", _source, _U("sent"), 4000)
             else
-                TriggerClientEvent("vorp:TipRight", targetID, _U("received") .. qty .. _U("gold"), 5000)
+                TriggerClientEvent("vorp:TipRight", _source, _U("addquantity"), 4000)
             end
-            TriggerClientEvent("vorp:TipRight", _source, _U("sent"), 4000)
         elseif type == "horse" then
             local identifier = Character.identifier
             local charid = Character.charIdentifier

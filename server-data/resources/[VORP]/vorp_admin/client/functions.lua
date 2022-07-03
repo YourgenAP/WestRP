@@ -22,6 +22,21 @@ function GetPlayers()
     return playersData
 end
 
+function GetPlayersClient(player)
+    local players = GetActivePlayers()
+    for i=1, #players, 1 do
+        local server = GetPlayerServerId(players[i])
+		if tonumber(server) == tonumber(player) then 
+            local ped = 0
+			while ped == 0 do 
+				ped = GetPlayerPed(players[i])
+                Wait(10)
+			end
+			return ped
+		end
+    end
+end
+
 ---------------------------------------------------------------------------------------------------------------
 ----------------------------------- MAIN MENU -----------------------------------------------------------------
 function OpenMenu()
@@ -76,6 +91,8 @@ function OpenMenu()
                 Wait(100)
                 if AdminAllowed then
                     Teleport()
+                else
+                    TriggerEvent("vorp:TipRight", _U("noperms"), 4000)
                 end
             elseif data.current.value == "devtools" then
                 TriggerServerEvent("vorp_admin:opneStaffMenu", 'vorp.staff.Devtools')
