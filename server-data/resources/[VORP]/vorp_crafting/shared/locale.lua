@@ -24,7 +24,7 @@ function _all()
 	if Locales[Config.defaultlang] ~= nil then
 		return Locales[Config.defaultlang]
 	else
-		Print('Translation [' .. Config.defaultlang .. '] does not exist')
+		print('Translation [' .. Config.defaultlang .. '] does not exist')
 		return nil
 	end
 end

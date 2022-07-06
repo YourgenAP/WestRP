@@ -316,7 +316,7 @@ function OpenSimpleActionMenu(PlayerInfo)
                         local reason = tostring(result)
                         if reason ~= "" then
                             if targetGroup ~= "user" then
-                                TriggerEvent("vorp:TipRight", "you cant warn staff staff", 4000)
+                                TriggerEvent("vorp:TipRight", _U("cantwarnstaff"), 4000)
                             else
 
                                 TriggerServerEvent("vorp_admin:warns", target, status, staticID, reason)
@@ -441,7 +441,7 @@ function OpenAdvancedActions(Player)
                         local reason = tostring(result)
                         if reason ~= "" then
                             if targetGroup ~= "user" then
-                                TriggerEvent("vorp:TipRight", "you cant kick staff", 4000)
+                                TriggerEvent("vorp:TipRight",  _U("cantkickstaff"), 4000)
                             else
 
                                 TriggerServerEvent("vorp_admin:kick", targetID, reason)
@@ -485,7 +485,7 @@ function OpenAdvancedActions(Player)
                         if time ~= "" then
 
                             if group ~= "user" then
-                                TriggerEvent("vorp:TipRight", "you cant ban staff", 4000)
+                                TriggerEvent("vorp:TipRight",  _U("cantbanstaff"), 4000)
                             else
                                 TriggerServerEvent("vorp_admin:BanPlayer", target, staticID, time)
                             end
@@ -517,7 +517,7 @@ function OpenAdvancedActions(Player)
                     local staticID = data.current.info2
                     local type = "addWhiteList"
                     TriggerServerEvent("vorp_admin:Whitelist", target, staticID, type)
-                    TriggerEvent("vorp:TipRight", "whitelist was set", 5000)
+                    TriggerEvent("vorp:TipRight", _U("whiteset"), 5000)
                 else
                     TriggerEvent("vorp:TipRight", _U("noperms"), 4000)
                 end
@@ -531,7 +531,7 @@ function OpenAdvancedActions(Player)
                     local staticID = data.current.info2
                     local type = "removewhitelist"
                     TriggerServerEvent("vorp_admin:Whitelist", target, staticID, type)
-                    TriggerEvent("vorp:TipRight", "whitelist was removed", 5000)
+                    TriggerEvent("vorp:TipRight", _U("whiteremove"), 5000)
                 else
                     TriggerEvent("vorp:TipRight", _U("noperms"), 4000)
                 end
@@ -834,7 +834,7 @@ function OffLine()
                         elseif type == "unban" then
                             TriggerEvent("vorp:unban", StaticID)
                         else
-                            TriggerEvent("vorp:TipRight", " incorrect type")
+                            TriggerEvent("vorp:TipRight", _U("incorrecttype"))
                         end
 
                     else
@@ -852,7 +852,7 @@ function OffLine()
                     attributes = {
                         inputHeader = _U("whiteunwhite"), -- header
                         type = "text", -- inputype text, number,date.etc if number comment out the pattern
-                        pattern = "[0-9 ]{1,10}", -- regular expression validated for only numbers "[0-9]", for letters only [A-Za-z]+   with charecter limit  [A-Za-z]{5,20}     with chareceter limit and numbers [A-Za-z0-9]{5,}
+                        pattern = "[A-Za-z0-9 ]{1,20}", -- regular expression validated for only numbers "[0-9]", for letters only [A-Za-z]+   with charecter limit  [A-Za-z]{5,20}     with chareceter limit and numbers [A-Za-z0-9]{5,}
                         title = " min 1 max 20 no . no , no - no _", -- if input doesnt match show this message
                         style = "border-radius: 10px; background-color: ; border:none;", -- style  the inptup
                     }
@@ -872,7 +872,7 @@ function OffLine()
                             elseif type == "unwhitelist" then
                                 TriggerEvent("vorp:unwhitelistPlayer", StaticID)
                             else
-                                TriggerEvent("vorp:TipRight", "incorrect")
+                                TriggerEvent("vorp:TipRight", _U("incorrect"))
                             end
                         end
                     else
@@ -912,10 +912,10 @@ function OffLine()
                             elseif type == "unwarn" then
                                 TriggerEvent("vorp:unwarn", StaticID)
                             else
-                                TriggerEvent("vorp:TipRight", "incorrect")
+                                TriggerEvent("vorp:TipRight", _U("incorrect"))
                             end
                         else
-                            TriggerEvent("vorp:TipRight", "missing one argument add type and staticID")
+                            TriggerEvent("vorp:TipRight", _U("missing"))
                         end
 
                     else

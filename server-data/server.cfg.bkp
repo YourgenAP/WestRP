@@ -15,6 +15,8 @@ ensure vorp_core
 ensure vorp_character
 ensure vorp_inputs
 ensure vorp_inventory
+ensure vorp_admin
+ensure vorp_crafting
 
 ensure interiors
 ensure debug
@@ -24,6 +26,8 @@ ensure westrp-chat
 ensure yap-medicine
 
 ensure noclip
+
+exec vorp_perms.cfg # vorpframework permmisions
 
 # A comma-separated list of tags for your server.
 # For example:
@@ -39,6 +43,8 @@ sets locale "ru-RU"
  
 # Set your server's hostname
 sv_hostname "WestRP Development Server"
+sets sv_projectName "WestRP"
+sets sv_projectDesc "WestRP development server"
 
 # Add system admins
 add_ace group.admin command allow # allow all commands
