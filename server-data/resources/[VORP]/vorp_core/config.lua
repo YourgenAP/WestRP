@@ -82,6 +82,9 @@ Config = {
   -------------------------------------------------------------------------------
   ------------------------------- RESPAWN ---------------------------------------
 
+  HealthOnRespawn = 500, --Player's health when respawned in hospital (MAX = 500)
+  HealthOnResurrection = 100, --Player's health when resurrected (MAX = 500)
+  DisableRecharge = true, --Disable auto recharge of health outer core (real ped health)
   RespawnTime = 300, --seconds
   RespawnKey = 0xDFF812F9, --[E] KEY
   RespawnTitleFont = 1, -- for the draw text message
