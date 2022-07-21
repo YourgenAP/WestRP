@@ -52,5 +52,6 @@ Locales["es_lang"] = {
     give = "give",
     drop = "drop",
     cantweapons = "No puedes llevar más armas.",
-    cantweapons2 = "La persona ya tiene demasiadas armas"
+    cantweapons2 = "La persona ya tiene demasiadas armas",
+    slow = "Stop trying to spam items!"
 }

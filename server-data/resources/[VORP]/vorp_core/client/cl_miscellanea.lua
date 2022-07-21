@@ -23,7 +23,6 @@ function LoadTexture(hash)
     end
 end
 
-
 function bigInt(text)
     local string1 = DataView.ArrayBuffer(16)
     string1:SetInt64(0, text)
@@ -64,15 +63,18 @@ function TeleportToCoords(x, y, z, heading)
 end
 
 --- show playerd ID prompt when focus on players
-Citizen.CreateThread(function()
-    while true do
-        Wait(500)
-        for _, player in ipairs(GetActivePlayers()) do
-            local ped = GetPlayerPed(player)
-            SetPedPromptName(ped, "Player ID " .. tostring(GetPlayerServerId(player)))
+if Config.showplayerIDwhenfocus then
+    Citizen.CreateThread(function()
+        while true do
+            Wait(500)
+            for _, player in ipairs(GetActivePlayers()) do
+                local ped = GetPlayerPed(player)
+                SetPedPromptName(ped, "Player ID " .. tostring(GetPlayerServerId(player)))
+            end
         end
-    end
-end)
+    end)
+end
+
 
 
 Citizen.CreateThread(function()
@@ -100,4 +102,3 @@ Citizen.CreateThread(function()
 
     end
 end)
-
