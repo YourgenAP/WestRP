@@ -1,5 +1,24 @@
 exports('vorp_inventoryApi',function()
     local self = {}
+
+    self.registerInventory = function(id, name, limit, acceptWeapons, shared)
+        TriggerEvent("vorpCore:registerInventory", id, name, limit, acceptWeapons, shared)
+    end
+
+    self.removeInventory = function(id)
+        TriggerEvent("vorpCore:removeInventory", id)
+    end
+
+
+    self.setInventoryItemLimit = function(id, itemName, limit)
+        TriggerEvent("vorpCore:setInventoryItemLimit", id, itemName, limit)
+    end
+
+    self.setInventoryWeaponLimit = function(id, weaponName, limit) -- same event as setInventoryItemLimit
+        TriggerEvent("vorpCore:setInventoryItemLimit", id, weaponName, limit)
+    end
+
+
     self.subWeapon = function(source,weaponid)
         TriggerEvent("vorpCore:subWeapon",source,tonumber(weaponid))
     end
@@ -12,29 +31,59 @@ exports('vorp_inventoryApi',function()
         TriggerEvent("vorpCore:giveWeapon",source,weaponid,target)
     end
 
-    self.addItem = function(source,itemName,cuantity)
-        TriggerEvent("vorpCore:addItem",source,tostring(itemName),tonumber(cuantity))
+    self.addItem = function(source,itemName,qty, metadata)
+        TriggerEvent("vorpCore:addItem",source,tostring(itemName),tonumber(qty), metadata)
     end
 
-    self.subItem = function(source,itemName,cuantity)
-        TriggerEvent("vorpCore:subItem",source,tostring(itemName),tonumber(cuantity))
+    self.subItem = function(source,itemName,qty, metadata)
+        TriggerEvent("vorpCore:subItem",source,tostring(itemName),tonumber(qty), metadata)
     end
 
-    self.getItem = function(source, itemName)
+    self.getItem = function(source, itemName, metadata)
         local item
         
         TriggerEvent("vorpCore:getItem", source, tostring(itemName), function(responseItem)
+            item = responseItem
+        end, metadata)
+
+        return item
+    end
+
+    self.getItemByName = function(source, itemName)
+        local item
+        
+        TriggerEvent("vorpCore:getItemByName", source, tostring(itemName), function(responseItem)
+            item = responseItem
+        end, metadata)
+
+        return item
+    end
+
+    self.getItemContainingMetadata = function(source, itemName, metadata)
+        local item
+        
+        TriggerEvent("vorpCore:getItemContainingMetadata", source, tostring(itemName), metadata, function(responseItem)
             item = responseItem
         end)
 
         return item
     end
 
-    self.getItemCount = function(source,item)
+    self.getItemMatchingMetadata = function(source, itemName, metadata)
+        local item
+        
+        TriggerEvent("vorpCore:getItemMatchingMetadata", source, tostring(itemName), metadata, function(responseItem)
+            item = responseItem
+        end)
+
+        return item
+    end
+
+    self.getItemCount = function(source,item, metadata)
         local count = 0
         TriggerEvent("vorpCore:getItemCount",source,function(itemcount)
             count = itemcount
-        end,tostring(item))
+        end,tostring(item), metadata)
         return count
     end
 
@@ -61,12 +110,12 @@ exports('vorp_inventoryApi',function()
         return item
     end
 
-    self.addBullets = function(source,weaponId,type,cuantity)
-        TriggerEvent("vorpCore:addBullets",source,weaponId,type,cuantity)
+    self.addBullets = function(source,weaponId,type,qty)
+        TriggerEvent("vorpCore:addBullets",source,weaponId,type,qty)
     end
 
-    self.subBullets = function(source,weaponId,type,cuantity)
-        TriggerEvent("vorpCore:subBullets",source,weaponId,type,cuantity)
+    self.subBullets = function(source,weaponId,type,qty)
+        TriggerEvent("vorpCore:subBullets",source,weaponId,type,qty)
     end
 
     self.getWeaponBullets = function(source,weaponId)
@@ -161,11 +210,19 @@ exports('vorp_inventoryApi',function()
         TriggerEvent("vorpCore:canCarryWeapons", source, amount, cb)
     end
 
-    self.CloseInv = function(source) 
-        TriggerClientEvent("vorp_inventory:CloseInv",source)
+     self.CloseInv = function(source, invId) 
+        if invId then
+            TriggerEvent("vorpCore:closeCustomInventory", source, id)
+        else
+            TriggerClientEvent("vorp_inventory:CloseInv",source)
+        end
     end
-    self.OpenInv = function(source)
-        TriggerClientEvent("vorp_inventory:OpenInv",source)
+    self.OpenInv = function(source, invId)
+        if invId then
+            TriggerEvent("vorpCore:openCustomInventory", source, id)
+        else
+            TriggerClientEvent("vorp_inventory:OpenInv",source)
+        end
     end
     
     return self

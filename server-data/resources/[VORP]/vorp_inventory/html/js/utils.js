@@ -22,6 +22,10 @@ function OverSetDesc(title) {
     document.getElementById("description").innerHTML = title;
 }
 
+function OverSetDescSecond(desc) {
+    document.getElementById("description2").innerHTML = desc;
+}
+
 function secondarySetTitle(title) {
     document.getElementById("titleHorse").innerHTML = title;
 }
@@ -130,7 +134,7 @@ function selectPlayerToGive(data) {
     });
 }
 
-function dropGetHowMany(item, type, hash, id) {
+function dropGetHowMany(item, type, hash, id, metadata) {
     if (type != "item_weapon") {
         dialog.prompt({
             title: LANGUAGE.prompttitle,
@@ -152,8 +156,10 @@ function dropGetHowMany(item, type, hash, id) {
                     } 
                 $.post("http://vorp_inventory/DropItem", JSON.stringify({
                     item: item,
+                    id: id,
                     type: type,
-                    number: value
+                    number: value,
+                    metadata: metadata
                 }));
                 return true;
             }
@@ -168,7 +174,7 @@ function dropGetHowMany(item, type, hash, id) {
     }
 }
 
-function giveGetHowMany(item, type, hash, id) {
+function giveGetHowMany(item, type, hash, id, metadata) {
     if (type != "item_weapon") {
         dialog.prompt({
             title: LANGUAGE.prompttitle,
@@ -192,7 +198,9 @@ function giveGetHowMany(item, type, hash, id) {
                     type: type,
                     what: "give",
                     item: item,
-                    count: value
+                    id: id,
+                    count: value,
+                    metadata: metadata
                 }));
                 return true;
             }

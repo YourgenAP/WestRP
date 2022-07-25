@@ -9,7 +9,9 @@ Config = {
 
   defaultlang = "en_lang",
 
-  -- items that dont get added up torwards your max weapon count 
+  ShowCharacterNameOnGive = false, -- when giving an item, show the character name of nearby players instead of their player ID. if set to false, show the player ID
+
+  -- items that dont get added up torwards your max weapon count
   notweapons = {
     "WEAPON_KIT_BINOCULARS_IMPROVED",
     "WEAPON_KIT_BINOCULARS",
@@ -50,7 +52,9 @@ Config = {
 
   -- NEED TO TEST
   DropOnRespawn = {
-    Money   = false,
+    AllMoney   = false,
+    PartMoney = false,
+    PartPercentage = 25,
     Gold    = false, -- TRUE ONLY IF UseGoldItem = true
     Weapons = false,
     Items   = false

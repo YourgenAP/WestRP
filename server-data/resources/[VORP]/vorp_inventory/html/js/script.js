@@ -113,6 +113,10 @@ window.addEventListener('message', function (event) {
 
         type = event.data.type
 
+        if (event.data.type == "custom") {
+            customId = event.data.id;
+            initiateSecondaryInventory(id, event.data.title, event.data.capacity)
+        }
 
         if (event.data.type == "horse") {
             horseid = event.data.horseid;

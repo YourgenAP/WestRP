@@ -6,6 +6,7 @@ let disabledFunction = null;
 let ready4Action = true;
 let checkxy;
 let infoxy;
+let customId = 0;
 let houseId = 0;
 let hideoutid = 0;
 let clanid = 0;

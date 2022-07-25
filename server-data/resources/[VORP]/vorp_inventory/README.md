@@ -1,9 +1,8 @@
 # Inventory in Lua System for VORPCore framework
 
 ## Requirements
-- [VORP Core](https://github.com/VORPCORE/VORP-Core/releases)
-- [VORP Inputs](https://github.com/VORPCORE/VORP-Inputs/releases)
-- [VORP Character](https://github.com/VORPCORE/VORP-Character/releases)
+- [VORP_Core](https://github.com/VORPCORE/vorp-core-lua)
+- [VORP Inputs](https://github.com/VORPCORE/vorp_inputs-lua)
 
 ## How to install
 * Download the lastest version of VORP Inventory
@@ -38,5 +37,5 @@
 
 ## Credits
 - To [Val3ro](https://github.com/Val3ro) for the initial work.
-- to [Emolitt](https://github.com/Emolitt) and [Outsider](https://github.com/outsider31000) for finishing/testing.   
+- to [Emolitt](https://github.com/RomainJolidon) and [Outsider](https://github.com/outsider31000) for finishing/testing.   
 - Credits to Vorp Team for creating the C# version and [Local9](https://github.com/Local9).
