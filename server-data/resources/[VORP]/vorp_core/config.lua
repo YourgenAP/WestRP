@@ -4,6 +4,10 @@
 
 Config = {
   ----------------------------------------------------------------------------
+  ----------------------- SERVER MANAGEMENT -------------------------------------
+  autoUpdateDB = true,
+
+  ----------------------------------------------------------------------------
   ----------------------- STARTING POINT -------------------------------------
   initGold                 = 0.0,
   initMoney                = 200.0,
@@ -12,7 +16,7 @@ Config = {
   initJob                  = "unemployed", -- leave it like this
   initJobGrade             = 0, -- leave it like this
   initGroup                = "user", -- leave it like this
-  Whitelist                = true, 
+  Whitelist                = true,
   AllowWhitelistAutoUpdate = true,
   maxHealth                = 10, -- 10 is FULL 0 IS EMPTY define max outer core for players
   maxStamina               = 10, -- 10 is FULL 0 IS EMPTY define max outer core for players
@@ -20,9 +24,6 @@ Config = {
   PVPToggle                = true, -- If true, players can set their own pvp state
   savePlayersTimer         = 10000, -- this will tell the core in how many miliseconds should all players be saved to the database, decreasing may reduce performance
   showplayerIDwhenfocus    = true, -- set false will show steam name when focus on another player RMB
-
-  hourstosave              = 0.25, -- How much hours to save at every saveHoursTimer cycle
-  saveHoursTimer           = 900000, -- Recomanded: 900000 Don't change just if u know what ur doing!!
   ------------------------------------------------------------------------------
   --------------------------- MULTICHARACTER -----------------------------------
   SaveSteamNameDB          = false, -- TRUE if you want save steamname on character DB when player drop (need to update SQL)
@@ -38,7 +39,7 @@ Config = {
   ------------------------------------------------------------------------------
   ------------------------------ WEBHOOKS --------------------------------------
 
-  Logs         = true, -- SET TO FALSE IF YOU DONT WANT LOGS
+
   webhookColor = 16711680, --EMBED COLOR
   name         = "VORP", --NAME OF EMBED
   logo         = "https://via.placeholder.com/30x30", --HEAD LOGO
@@ -48,22 +49,24 @@ Config = {
 
   ---------------------------- WEBHOOK FOR EACH LOG -----------------------------
   --CHANGE THE LINKS
-
-  SetgroupWebhook   = "https://discord.com/api/webhooks/984098145178910770/m30Uft8huCdwoTQpXENKQIqxliGGh1vcuu6ietdAoMcE8Oj8W8_RpbCrv-Z4DSCw1wS_", --SETGROUP
-  SetjobWebhook     = "", --SETJOB
-  AddmoneyWebhook   = "", --ADDMONEY
-  DelMoneyWebhook   = "", --DELMONEY
-  AddItemsWebhook   = "", --ADDITEMS
-  AddWeaponsWebhook = "", --ADDWEAPONS
-  DelWagonsWebhook  = "", --DELWAGONS
-  TpmWebhook        = "", --TPM
-  DelHorseWebhook   = "", --DELHORSE
-  HealPlayerWebhook = "", --HEALPLAYER
-  ReviveWebhook     = "", --REVIVE
-  WhitelistWebhook  = "", --WHITELIST
-  BanWarnWebhook    = "", --BANS/WARNS
-  NewPlayerWebhook  = "https://discord.com/api/webhooks/985992086954336286/VBGpJR5tRxBOHDVUqVflPleknEBFyT86CLB06aMwDgByQSEsqlEe-loltn2jswWuyeDk", --NEWPLAYER
-  CharPermWebhook   = "", --CHARPERMS
+  -- delete what you dont want or add nil
+  Logs = {
+    SetgroupWebhook   = "https://discord.com/api/webhooks/984098145178910770/m30Uft8huCdwoTQpXENKQIqxliGGh1vcuu6ietdAoMcE8Oj8W8_RpbCrv-Z4DSCw1wS_", --SETGROUP
+    SetjobWebhook     = "", --SETJOB
+    AddmoneyWebhook   = "", --ADDMONEY
+    DelMoneyWebhook   = "", --DELMONEY
+    AddItemsWebhook   = "", --ADDITEMS
+    AddWeaponsWebhook = "", --ADDWEAPONS
+    DelWagonsWebhook  = "", --DELWAGONS
+    TpmWebhook        = "", --TPM
+    DelHorseWebhook   = "", --DELHORSE
+    HealPlayerWebhook = "", --HEALPLAYER
+    ReviveWebhook     = "", --REVIVE
+    WhitelistWebhook  = "", --WHITELIST
+    BanWarnWebhook    = "", --BANS/WARNS
+    NewPlayerWebhook  = "https://discord.com/api/webhooks/985992086954336286/VBGpJR5tRxBOHDVUqVflPleknEBFyT86CLB06aMwDgByQSEsqlEe-loltn2jswWuyeDk", --NEWPLAYER
+    CharPermWebhook   = "", --CHARPERMS
+  },
 
   ------------------------------------------------------------------------------
   ---------------------------- VOICE -------------------------------------------
@@ -81,7 +84,6 @@ Config = {
   enableTypeRadar = true, --- if true the above will work, if false players can choose their radar type in the game settings.
   Loadinscreen      = true, --ENABLE LOADING SCREENS on spawn and while spawn dead
   LoadinScreenTimer = 10000, -- miliseconds
-
   -------------------------------------------------------------------------------
   ------------------------------- RESPAWN ---------------------------------------
 
@@ -204,9 +206,13 @@ Config = {
     NotifyCharSelect   = "После ~e~удаления ~q~персонажа пути назад не будет!",
     PVPNotifyOn        = "PVP On ",
     PVPNotifyOff       = "PVP Off",
-    AddChar            = "Added Multicharacter ",
-    RemoveChar         = "Removed Multicharacter ",
-    WrongHex           = "Hex not in DB or Wrong Hex"
+    AddChar            = "Добавлен мультичар ",
+    RemoveChar         = "Убран мультичар ",
+    WrongHex           = "Hex не в БД или неправильный",
+    myjob              = "Ваша работа: ~o~",
+    mygrade            = " ~q~уровень: ~o~",
+    charhours          = "Количество часов на персонаже: ~o~",
+    playhours          = "Часов игры: ~o~"
   },
 
 

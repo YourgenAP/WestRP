@@ -219,7 +219,7 @@ exports('vorp_inventoryApi',function()
     end
     self.OpenInv = function(source, invId)
         if invId then
-            TriggerEvent("vorpCore:openCustomInventory", source, id)
+            TriggerEvent("vorpCore:openCustomInventory", source, invId)
         else
             TriggerClientEvent("vorp_inventory:OpenInv",source)
         end

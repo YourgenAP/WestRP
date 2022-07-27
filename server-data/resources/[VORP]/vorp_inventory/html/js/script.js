@@ -94,10 +94,16 @@ window.addEventListener('message', function (event) {
     if (event.data.action == "display") {
         $("#inventoryHud").fadeIn();
         $(".controls").remove();
-
-        $("#inventoryHud").append(
-            `<div class='controls'><div class='controls-center'><input type='text' id='search' placeholder='${LANGUAGE.inventorysearch}'/><button id='check'>${checkxy} / ${infoxy}</button></div><button id='close'>${LANGUAGE.inventoryclose}</button></div></div>`
-        );
+        
+        if (event.data.search) {
+            $("#inventoryHud").append(
+                `<div class='controls'><div class='controls-center'><input type='text' id='search' placeholder='${LANGUAGE.inventorysearch}'/><button id='check'>${checkxy} / ${infoxy}</button></div><button id='close'>${LANGUAGE.inventoryclose}</button></div></div>`
+            );   
+        } else {
+            $("#inventoryHud").append(
+                `<div class='controls'><div class='controls-center'><button id='check'>${checkxy} / ${infoxy}</button></div><button id='close'>${LANGUAGE.inventoryclose}</button></div></div>`
+            );
+        }
 
         $("#search").bind('input', function () {
             searchFor = $("#search").val().toLowerCase();
@@ -155,9 +161,11 @@ window.addEventListener('message', function (event) {
 
         disabled = false;
 
-        $(document).on('keydown', function (event) {
-            $("#search").focus();
-        });
+        if (event.data.autofocus == true) {
+            $(document).on('keydown', function (event) {
+                $("#search").focus();
+            });
+        }
 
         $("#close").on('click', function (event) {
             closeInventory();

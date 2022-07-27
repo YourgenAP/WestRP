@@ -24,6 +24,12 @@ end
 
 InventoryAPI.canCarryAmountWeapons = function(player, amount, cb)
 	local _source = player
+	
+	if _source == nil then
+		print("Wrong ID or player dont exist")
+		return
+	end
+	
 	local sourceCharacter = Core.getUser(_source).getUsedCharacter
 	local identifier = sourceCharacter.identifier
 	local charId = sourceCharacter.charIdentifier
@@ -150,6 +156,11 @@ end
 
 InventoryAPI.canCarryItem = function (player, itemName, amount, cb)
 	local _source = player
+	if _source == nil then
+		print("Wrong ID or player dont exist")
+	        return
+	end
+	
 	local sourceCharacter = Core.getUser(_source).getUsedCharacter
 	local identifier = sourceCharacter.identifier
 	local svItem = svItems[itemName]
