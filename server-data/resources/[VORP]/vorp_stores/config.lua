@@ -225,7 +225,94 @@ Config.Stores = {
 -- price = numbers only
 -- desc = a description of the item
 -- category = where the item will be displayed at
+--[[
+{ itemLabel = "Apple", itemName = "apple", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell apples", category = "food" },
+{ itemLabel = "Minty Berry Mash", itemName = "appleCrumbMash", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell minty berry mash", category = "food" },
+{ itemLabel = "Medium Bluegil", itemName = "a_c_fishbluegil_01_ms", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell medium bluegill", category = "food" },
+{ itemLabel = "Small Bluegil", itemName = "a_c_fishbluegil_01_sm", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell small bluegill", category = "food" },
+{ itemLabel = "Medium Bullhead", itemName = "a_c_fishbullheadcat_01_ms", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell medium bullhead", category = "food" },
+{ itemLabel = "Small Bullhead", itemName = "a_c_fishbullheadcat_01_sm", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell small bullhead", category = "food" },
+{ itemLabel = "Medium Pickerel", itemName = "a_c_fishchainpickerel_01_ms", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell medium pickerel", category = "food" },
+{ itemLabel = "Small Pickerel", itemName = "a_c_fishchainpickerel_01_sm", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell small pickerel", category = "food" },
+{ itemLabel = "Lardgemouth Bass", itemName = "a_c_fishlargemouthbass_01_ms", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell lardgemouth bass", category = "food" },
+{ itemLabel = "Medium Perch", itemName = "a_c_fishperch_01_ms", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell medium perch", category = "food" },
+{ itemLabel = "Small Perch", itemName = "a_c_fishperch_01_sm", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell small perch", category = "food" },
+{ itemLabel = "Rainbow Trout", itemName = "a_c_fishrainbowtrout_01_ms", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell rainbow trout", category = "food" },
+{ itemLabel = "Medium Redfin Pickerel", itemName = "a_c_fishredfinpickerel_01_ms", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell medium redfin pickerel", category = "food" },
+{ itemLabel = "Small Redfin Pickerel", itemName = "a_c_fishredfinpickerel_01_sm", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell small redfin pickerel", category = "food" },
+{ itemLabel = "Medium Rockbass", itemName = "a_c_fishrockbass_01_ms", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell medium rock bass", category = "food" },
+{ itemLabel = "Small Rockbass", itemName = "a_c_fishrockbass_01_sm", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell small rock bass", category = "food" },
+{ itemLabel = "Sockeye Salmon", itemName = "a_c_fishsalmonsockeye_01_ms", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell sockeye salmon", category = "food" },
+{ itemLabel = "Smallmouth Bass", itemName = "a_c_fishsmallmouthbass_01_ms", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell Smallmouth Bass", category = "food" },
+{ itemLabel = "Banana", itemName = "banana", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell banana", category = "food" },
+--гриб
+{ itemLabel = "Bay Bolete", itemName = "Bay_Bolete", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell bay bolete", category = "food" },
 
+{ itemLabel = "Beef Jerky", itemName = "beefjerky", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell beef jerky", category = "food" },
+{ itemLabel = "Black Berry", itemName = "Black_Berry", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell black berry", category = "food" },
+{ itemLabel = "Black Currant", itemName = "Black_Currant", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell black currant", category = "food" },
+{ itemLabel = "Blueberry", itemName = "blueberry", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell blueberry", category = "food" },
+{ itemLabel = "Boiled Egg", itemName = "boiledegg", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell boiled egg", category = "food" },
+{ itemLabel = "Carrot", itemName = "carrots", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell carrots", category = "food" },
+--гриб
+{ itemLabel = "Chanterelles", itemName = "Chanterelles", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell chanterelles", category = "food" },
+
+{ itemLabel = "Char", itemName = "char", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell char", category = "food" },
+{ itemLabel = "Choc Daisy", itemName = "Choc_Daisy", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell choc daisy", category = "food" },
+{ itemLabel = "Cocoa", itemName = "cocoa", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell cocoa", category = "food" },
+
+{ itemLabel = "Caramel", itemName = "consumable_caramel", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell caramel", category = "food" },
+{ itemLabel = "Chocolate Bar", itemName = "consumable_chocolate", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell chocolate bar", category = "food" },
+{ itemLabel = "Coffee", itemName = "consumable_coffee", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell cCoffee", category = "food" },
+--?
+{ itemLabel = "Chanterelles", itemName = "consumable_herb_chanterelles", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell сhanterelles", category = "food" },
+
+{ itemLabel = "Kidney Beans", itemName = "consumable_kidneybeans_can", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell лidney иeans", category = "food" },
+{ itemLabel = "Peach", itemName = "consumable_peach", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell peach", category = "food" },
+{ itemLabel = "Pear", itemName = "consumable_pear", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell pear", category = "food" },
+
+{ itemLabel = "Salmon Can", itemName = "consumable_salmon_can", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell salmon can", category = "food" },
+{ itemLabel = "Corn", itemName = "corn", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell corn", category = "food" },
+{ itemLabel = "Creekplum", itemName = "Creekplum", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell сreekplum", category = "food" },
+{ itemLabel = "Duck Egg", itemName = "Duck_Egg", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell duck egg", category = "food" },
+{ itemLabel = "Egg", itemName = "eggs", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell egg", category = "food" },
+
+{ itemLabel = "Dog Food", itemName = "Feed_For_Dog", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell dog food", category = "food" },
+
+{ itemLabel = "Fish", itemName = "fish", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell fish", category = "food" },
+{ itemLabel = "Gamey Meat", itemName = "Gamey_Meat", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell gamey meat", category = "food" },
+{ itemLabel = "Aligator Egg 3", itemName = "Gator_Egg_3", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell aligator egg 3", category = "food" },
+{ itemLabel = "Aligator Egg 4", itemName = "Gator_Egg_4", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell aligator egg 4", category = "food" },
+{ itemLabel = "Aligator Egg 5", itemName = "Gator_Egg_5", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell aligator egg 5", category = "food" },
+{ itemLabel = "Ginseng Tea", itemName = "ginsengtea", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell ginseng tea", category = "food" },
+{ itemLabel = "Gold Fish", itemName = "goldfish", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell gold fish", category = "food" },
+{ itemLabel = "Goose Egg", itemName = "Goose_Egg_4", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell goose egg", category = "food" },
+{ itemLabel = "Honey", itemName = "honey", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell honey", category = "food" },
+{ itemLabel = "Mackerel", itemName = "mackerel", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell mackerel", category = "food" },
+{ itemLabel = "Meat", itemName = "meat", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell meat", category = "food" },
+{ itemLabel = "Milk", itemName = "milk", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell milk", category = "food" },
+{ itemLabel = "Mutton", itemName = "Mutton", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell mutton", category = "food" },
+
+{ itemLabel = "Parasol Mushroom", itemName = "Parasol_Mushroom", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell parasol mushroom", category = "food" },
+
+{ itemLabel = "Potato", itemName = "potato", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell potato", category = "food" },
+{ itemLabel = "Red Raspberry", itemName = "Red_Raspberry", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell red raspberry", category = "food" },
+{ itemLabel = "Roach", itemName = "roach", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell roach", category = "food" },
+{ itemLabel = "Fresh Pork", itemName = "salamelle", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell fresh pork", category = "food" },
+{ itemLabel = "Salmon", itemName = "salmon", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell salmon", category = "food" },
+{ itemLabel = "Salt", itemName = "salt", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell salt", category = "food" },
+
+{ itemLabel = "Sap", itemName = "sap", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell sap", category = "food" },
+
+{ itemLabel = "Shrimp Stew", itemName = "shrimps", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell shrimp stew", category = "food" },
+{ itemLabel = "Sugar", itemName = "sugar", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell sugar", category = "food" },
+{ itemLabel = "Trout", itemName = "trout", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell trout", category = "food" },
+{ itemLabel = "Volture Egg", itemName = "Volture_Egg", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell volture egg", category = "food" },
+{ itemLabel = "Water", itemName = "water", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell water", category = "food" },
+{ itemLabel = "Black Berry Mash", itemName = "wildCiderMash", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell black berry Mash", category = "food" },
+{ itemLabel = "Wild Carrot", itemName = "Wild_Carrot", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell wild carrot", category = "food" },
+{ itemLabel = "Wintergreen Berry", itemName = "Wintergreen_Berry", currencyType = "cash", sellprice = 10, randomprice = math.random(10), desc = "sell цintergreen иerry", category = "food" },
+]]
 ---------------------------------------------------- SELL ITEMS --------------------------------------------------------------
 Config.SellItems = {
     Valentine = {
