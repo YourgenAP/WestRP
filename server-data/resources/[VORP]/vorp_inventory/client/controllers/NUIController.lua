@@ -40,6 +40,16 @@ RegisterNetEvent("vorp_inventory:ReloadCustomInventory")
 AddEventHandler("vorp_inventory:ReloadCustomInventory", NUIService.ReloadInventory)
 
 --#endregion
+-- Store Module
+RegisterNetEvent("vorp_inventory:OpenStoreInventory")
+AddEventHandler("vorp_inventory:OpenStoreInventory", NUIService.OpenStoreInventory)
+
+RegisterNetEvent("vorp_inventory:ReloadStoreInventory")
+AddEventHandler("vorp_inventory:ReloadStoreInventory", NUIService.ReloadInventory)
+
+RegisterNUICallback('TakeFromStore', NUIService.NUITakeFromStore)
+
+RegisterNUICallback('MoveToStore', NUIService.NUIMoveToStore)
 
 -- Horse Module
 RegisterNetEvent("vorp_inventory:OpenHorseInventory")

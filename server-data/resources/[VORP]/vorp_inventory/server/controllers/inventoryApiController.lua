@@ -19,6 +19,12 @@ AddEventHandler("vorpCore:getItem", InventoryAPI.getItem)
 RegisterServerEvent("vorpCore:getItemByName")
 AddEventHandler("vorpCore:getItemByName", InventoryAPI.getItemByName)
 
+RegisterServerEvent("vorpCore:getcomps")
+AddEventHandler("vorpCore:getcomps", InventoryAPI.getcomps)
+
+RegisterServerEvent("vorpCore:deletegun")
+AddEventHandler("vorpCore:deletegun", InventoryAPI.deletegun)
+
 RegisterServerEvent("vorpCore:getItemContainingMetadata")
 AddEventHandler("vorpCore:getItemContainingMetadata", InventoryAPI.getItemContainingMetadata)
 

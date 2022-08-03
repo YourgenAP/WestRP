@@ -98,9 +98,9 @@ function inventorySetup(items) {
         $("#item-" + index).hover(
             function () {
                 if (item.type !== "item_weapon") {
-                    OverSetDesc(!!item.metadata.description ? item.metadata.description : item.label);
+                    OverSetDesc(!!item.metadata.description ? item.metadata.description : '');
                 } else {
-                    OverSetDesc(!!item.desc ? item.desc : item.label);
+                    OverSetDesc(!!item.desc ? item.desc : '');
                 }
             },
             function () {
@@ -206,7 +206,7 @@ function inventorySetup(items) {
     });
     $("#item-" + m_item).hover(
         function() {
-            OverSetTitle(m_item);
+            OverSetTitle(m_label);
         },
         function() {
             OverSetTitle(" ");

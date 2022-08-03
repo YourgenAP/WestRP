@@ -5,14 +5,20 @@ $("document").ready(function () {
 
     $("#inventoryHud").hide();
     $("#secondInventoryHud").hide();
+    $('#character-selection').hide();
 
     $("body").on("keyup", function (key) {
         if (Config.closeKeys.includes(key.which)) {
-            closeInventory();
+            if ($('#character-selection').is(":visible")) {
+                $('#character-selection').hide();
+            } else {
+                closeInventory();
+            }
         }
     });
 
     initSecondaryInventoryHandlers();
+
 });
 
 window.onload = initDivMouseOver;
@@ -94,16 +100,10 @@ window.addEventListener('message', function (event) {
     if (event.data.action == "display") {
         $("#inventoryHud").fadeIn();
         $(".controls").remove();
-        
-        if (event.data.search) {
-            $("#inventoryHud").append(
-                `<div class='controls'><div class='controls-center'><input type='text' id='search' placeholder='${LANGUAGE.inventorysearch}'/><button id='check'>${checkxy} / ${infoxy}</button></div><button id='close'>${LANGUAGE.inventoryclose}</button></div></div>`
-            );   
-        } else {
-            $("#inventoryHud").append(
-                `<div class='controls'><div class='controls-center'><button id='check'>${checkxy} / ${infoxy}</button></div><button id='close'>${LANGUAGE.inventoryclose}</button></div></div>`
-            );
-        }
+
+        $("#inventoryHud").append(
+            `<div class='controls'><div class='controls-center'><input type='text' id='search' placeholder='${LANGUAGE.inventorysearch}'/><button id='check'>${checkxy} / ${infoxy}</button></div><button id='close'>${LANGUAGE.inventoryclose}</button></div></div>`
+        );
 
         $("#search").bind('input', function () {
             searchFor = $("#search").val().toLowerCase();
@@ -150,6 +150,11 @@ window.addEventListener('message', function (event) {
             clanid = event.data.clanid;
             initiateSecondaryInventory(clanid, event.data.title, event.data.capacity)
         }
+        if (event.data.type == "store") {
+            StoreId = event.data.StoreId;
+            geninfo = event.data.geninfo;
+            initiateSecondaryInventory(StoreId, event.data.title, event.data.capacity)
+        }
         if (event.data.type == "steal") {
             stealid = event.data.stealId;
             initiateSecondaryInventory(stealid, event.data.title, event.data.capacity)
@@ -161,11 +166,9 @@ window.addEventListener('message', function (event) {
 
         disabled = false;
 
-        if (event.data.autofocus == true) {
-            $(document).on('keydown', function (event) {
-                $("#search").focus();
-            });
-        }
+        $(document).on('keydown', function (event) {
+            $("#search").focus();
+        });
 
         $("#close").on('click', function (event) {
             closeInventory();

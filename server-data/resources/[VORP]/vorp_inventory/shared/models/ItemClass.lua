@@ -86,8 +86,8 @@ function Item:getCount()
 	return self.count
 end
 
-function Item:addCount(amount)
-	if self.count + amount <= self.limit then
+function Item:addCount(amount, ignoreStackLimit)
+	if (self.count + amount <= self.limit) or ignoreStackLimit then
 		self.count = self.count + amount
 		return true
 	end

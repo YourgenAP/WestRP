@@ -70,23 +70,17 @@ function LoadDatabase()
 						dropped = db_weapon.dropped
 					})
 	
-
 					if UsersWeapons[db_weapon.curr_inv] == nil then
 						UsersWeapons[db_weapon.curr_inv] = {}
 					end
 
 					UsersWeapons[db_weapon.curr_inv][weapon:getId()] = weapon
-
-			
-				else -- delete on server restart all weapons that were dropped to clean the databse.
-					db_weapon.dropped = 1
-					exports.ghmattimysql:execute("DELETE FROM loadout WHERE dropped=@dropped", { ['dropped'] = db_weapon.dropped })
 				end
 			end
 		end
 	end)
 end
 
-Citizen.CreateThread(function()	
+Citizen.CreateThread(function()
     LoadDatabase()
 end)

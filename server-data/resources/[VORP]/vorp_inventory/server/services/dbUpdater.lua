@@ -166,6 +166,8 @@ local Updates = {
     }
 }
 
+     
+
 local tries = 10
 local currentry = 1
 local CORE = nil
@@ -185,4 +187,5 @@ end
 
 Citizen.CreateThread(function()
     getCore()
+
 end)

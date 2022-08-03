@@ -3,24 +3,29 @@ isProcessingPay = false
 InInventory = false
 timerUse = 0
 local candrop = true 
+local storemenu = false 
+local geninfo = {}
+
+
 RegisterNetEvent('inv:dropstatus')
 AddEventHandler('inv:dropstatus', function(x)
 	candrop = x
 end)
 
 NUIService.ReloadInventory = function(inventory)
-	local payload = json.decode(inventory)
+    local payload = json.decode(inventory)
+    for _, item in pairs(payload.itemList) do
+        if item.type == "item_weapon" then
+            item.label = Utils.GetWeaponLabel(item.name)
+            if item.desc == nil then 
+                item.desc = Utils.GetWeaponDesc(item.name)
+            end
+        end
+    end
 
-	for _, item in pairs(payload.itemList) do
-		if item.type == "item_weapon" then
-			item.label = Utils.GetWeaponLabel(item.name)
-			item.desc = Utils.GetWeaponDesc(item.name)
-		end
-	end
-
-	SendNUIMessage(payload)
-	Wait(500)
-	NUIService.LoadInv()
+    SendNUIMessage(payload)
+    Wait(500)
+    NUIService.LoadInv()
 end
 
 
@@ -41,7 +46,7 @@ end
 
 NUIService.OpenClanInventory = function(clanName, clanId, capacity)
 	SetNuiFocus(true, true)
-	SendNUIMessage({ action = "display", type = "clan", title = "" .. clanName .. "", clanid = clanId, capacity = capacity, search = Config.InventorySearchable })
+	SendNUIMessage({ action = "display", type = "clan", title = "" .. clanName .. "", clanid = clanId, capacity = capacity })
 	InInventory = true
 end
 
@@ -56,7 +61,7 @@ end
 NUIService.OpenContainerInventory = function(ContainerName, Containerid, capacity)
 	SetNuiFocus(true, true)
 	SendNUIMessage({ action = "display", type = "Container", title = "" .. ContainerName .. "", Containerid = Containerid,
-		capacity = capacity, search = Config.InventorySearchable })
+		capacity = capacity })
 	InInventory = true
 end
 
@@ -69,16 +74,50 @@ NUIService.NUITakeFromContainer = function(obj)
 end
 
 NUIService.CloseInventory = function()
+	if storemenu then 
+		storemenu = false 
+		geninfo = {}
+		for _, item in pairs(UserInventory) do
+			if item.metadata ~= nil and item.metadata.description ~= nil and (item.metadata.orgdescription ~= nil or item.metadata.orgdescription == "") then 
+				if item.metadata.orgdescription == "" then 
+					item.metadata.description = nil
+				else
+					item.metadata.description = item.metadata.orgdescription 
+				end
+				item.metadata.orgdescription = nil 
+			end
+		end
+	end
 	SetNuiFocus(false, false)
-	TriggerEvent("vorp_stables:setClosedInv", false)
-	TriggerEvent("syn:closeinv")
 	SendNUIMessage({ action = "hide" })
 	InInventory = false
+	TriggerEvent("vorp_stables:setClosedInv", false)
+	TriggerEvent("syn:closeinv")
 end
-
+NUIService.CloseInv = function()
+	if storemenu then 
+		storemenu = false 
+		geninfo = {}
+		for _, item in pairs(UserInventory) do
+			if item.metadata ~= nil and item.metadata.description ~= nil and (item.metadata.orgdescription ~= nil or item.metadata.orgdescription == "") then 
+				if item.metadata.orgdescription == "" then 
+					item.metadata.description = nil
+				else
+					item.metadata.description = item.metadata.orgdescription 
+				end
+				item.metadata.orgdescription = nil 
+			end
+		end
+	end
+	SetNuiFocus(false, false)
+	SendNUIMessage({ action = "hide" })
+	InInventory = false
+	TriggerEvent("vorp_stables:setClosedInv", false)
+	TriggerEvent("syn:closeinv")
+end
 NUIService.OpenHorseInventory = function(horseTitle, horseId, capacity)
 	SetNuiFocus(true, true)
-	SendNUIMessage({ action = "display", type = "horse", title = horseTitle, horseid = horseId, capacity = capacity, search = Config.InventorySearchable })
+	SendNUIMessage({ action = "display", type = "horse", title = horseTitle, horseid = horseId, capacity = capacity })
 	InInventory = true
 	TriggerEvent("vorp_stables:setClosedInv", true)
 end
@@ -91,9 +130,31 @@ NUIService.NUITakeFromHorse = function(obj)
 	TriggerServerEvent("vorp_stables:TakeFromHorse", json.encode(obj))
 end
 
+NUIService.NUIMoveToStore = function(obj)
+	TriggerServerEvent("syn_store:MoveToStore", json.encode(obj))
+end
+
+NUIService.NUITakeFromStore = function(obj)
+	TriggerServerEvent("syn_store:TakeFromStore", json.encode(obj))
+end
+
+
+NUIService.OpenStoreInventory = function(StoreName, StoreId, capacity,geninfox)
+	storemenu = true
+	geninfo = geninfox
+	SetNuiFocus(true, true)
+	SendNUIMessage({ action = "display", type = "store", title = StoreName, StoreId = StoreId, capacity = capacity,geninfo=geninfo })
+	InInventory = true
+	TriggerEvent("syn_store:setClosedInv", true)
+end
+
+
+
+
+
 NUIService.OpenstealInventory = function(stealName, stealId, capacity)
 	SetNuiFocus(true, true)
-	SendNUIMessage({ action = "display", type = "steal", title = stealName, stealId = stealId, capacity = capacity, search = Config.InventorySearchable })
+	SendNUIMessage({ action = "display", type = "steal", title = stealName, stealId = stealId, capacity = capacity })
 	InInventory = true
 	TriggerEvent("vorp_stables:setClosedInv", true)
 end
@@ -108,7 +169,7 @@ end
 
 NUIService.OpenCartInventory = function(cartName, wagonId, capacity)
 	SetNuiFocus(true, true)
-	SendNUIMessage({ action = "display", type = "cart", title = cartName, wagonid = wagonId, capacity = capacity, search = Config.InventorySearchable })
+	SendNUIMessage({ action = "display", type = "cart", title = cartName, wagonid = wagonId, capacity = capacity })
 	InInventory = true
 
 	TriggerEvent("vorp_stables:setClosedInv", true)
@@ -125,7 +186,7 @@ end
 
 NUIService.OpenHouseInventory = function(houseName, houseId, capacity)
 	SetNuiFocus(true, true)
-	SendNUIMessage({ action = "display", type = "house", title = houseName, houseId = houseId, capacity = capacity, search = Config.InventorySearchable })
+	SendNUIMessage({ action = "display", type = "house", title = houseName, houseId = houseId, capacity = capacity })
 	InInventory = true
 end
 
@@ -139,7 +200,7 @@ end
 
 NUIService.OpenBankInventory = function(bankName, bankId, capacity)
 	SetNuiFocus(true, true)
-	SendNUIMessage({ action = "display", type = "bank", title = bankName, bankId = bankId, capacity = capacity, search = Config.InventorySearchable })
+	SendNUIMessage({ action = "display", type = "bank", title = bankName, bankId = bankId, capacity = capacity })
 	InInventory = true
 end
 
@@ -153,7 +214,7 @@ end
 
 NUIService.OpenHideoutInventory = function(hideoutName, hideoutId, capacity)
 	SetNuiFocus(true, true)
-	SendNUIMessage({ action = "display", type = "hideout", title = hideoutName, hideoutId = hideoutId, capacity = capacity, search = Config.InventorySearchable })
+	SendNUIMessage({ action = "display", type = "hideout", title = hideoutName, hideoutId = hideoutId, capacity = capacity })
 	InInventory = true
 end
 
@@ -197,6 +258,8 @@ NUIService.NUISetNearPlayers = function(obj, nearestPlayers)
 		print("No Near Players")
 		return
 	end
+	
+	print('[^NUISetNearPlayers^7] ^2Info^7: players found = ' .. json.encode(nearestPlayers));
 
 	local item = {}
 
@@ -225,6 +288,7 @@ NUIService.NUISetNearPlayers = function(obj, nearestPlayers)
 	nuiReturn.id = item.id
 	nuiReturn.type = item.type
 	nuiReturn.what = item.what
+
 
 	SendNUIMessage(nuiReturn)
 end
@@ -276,6 +340,7 @@ NUIService.NUIGiveItem = function(obj)
 					TriggerServerEvent("vorpinventory:weaponlog", target, data2)
 				end
 
+				print('[^NUIGiveItem^7] ^2Info^7: Reloading inv after sending info of giving item ?');
 				NUIService.LoadInv()
 			end
 		end
@@ -461,11 +526,39 @@ NUIService.LoadInv = function()
 
 	TriggerServerEvent("vorpinventory:check_slots")
 
-
-	for _, item in pairs(UserInventory) do
-		table.insert(items, item)
+	if not storemenu then 
+		for _, item in pairs(UserInventory) do
+			table.insert(items, item)
+		end
+	elseif storemenu then 
+		for _, item in pairs(UserInventory) do
+			if item.metadata ~= nil and item.metadata.description ~= nil and item.metadata.orgdescription ~= nil then 
+				item.metadata.description = item.metadata.orgdescription 
+				item.metadata.orgdescription = nil 
+			end
+		end
+		if geninfo.buyitems ~= nil and next(geninfo.buyitems) ~= nil then 
+			local buyitems = geninfo.buyitems
+			for _, item in pairs(UserInventory) do
+				for k, v in ipairs(buyitems) do 
+					if item.name == v.name then 
+						if item.metadata.description ~= nil then 
+							item.metadata.orgdescription = item.metadata.description
+							item.metadata.description = item.metadata.description.."<br><span style=color:Green;>".._U("cansell")..v.price.."</span>"
+						else
+							item.metadata.orgdescription = ""
+							item.metadata.description = "<span style=color:Green;>".._U("cansell")..v.price.."</span>"
+						end
+					end
+				end
+				table.insert(items, item)
+			end
+		else
+			for _, item in pairs(UserInventory) do
+				table.insert(items, item)
+			end
+		end
 	end
-
 	for _, currentWeapon in pairs(UserWeapons) do
 		local weapon = {}
 		weapon.count = currentWeapon:getTotalAmmoCount()
@@ -492,19 +585,13 @@ end
 
 NUIService.OpenInv = function()
 	SetNuiFocus(true, true)
-	SendNUIMessage({ action = "display", type = "main", search = Config.InventorySearchable, autofocus = Config.InventorySearchAutoFocus})
+	SendNUIMessage({ action = "display", type = "main" })
 	InInventory = true
 
 	NUIService.LoadInv()
 end
 
-NUIService.CloseInv = function()
-	SetNuiFocus(false, false)
-	SendNUIMessage({ action = "hide" })
-	InInventory = false
-	TriggerEvent("vorp_stables:setClosedInv", false)
-	TriggerEvent("syn:closeinv")
-end
+
 
 NUIService.TransactionStarted = function()
 	SetNuiFocus(true, false)
@@ -523,6 +610,7 @@ NUIService.initiateData = function()
 	SendNUIMessage({ action = "initiate", language = {
 		empty = _U("emptyammo"),
 		prompttitle = _U("prompttitle"),
+		prompttitle2 = _U("prompttitle2"),
 		promptaccept = _U("promptaccept"),
 		inventoryclose = _U("inventoryclose"),
 		inventorysearch = _U("inventorysearch"),

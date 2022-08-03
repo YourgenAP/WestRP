@@ -6,6 +6,12 @@ UserWeapons = {}
 UserInventory = {}
 bulletsHash = {}
 
+
+InventoryService.PullAllInventory = function ()
+    return UserInventory
+end
+
+
 InventoryService.receiveItem = function (name, id, amount, metadata)
 	if UserInventory[id] ~= nil then
 		UserInventory[id]:addCount(amount)
@@ -94,6 +100,7 @@ end
 
 InventoryService.getLoadout = function (loadout)
 	for _, weapon in pairs(loadout) do
+
 		local weaponAmmo = weapon.ammo
 
 		for type, amount in pairs(weaponAmmo) do
@@ -117,7 +124,8 @@ InventoryService.getLoadout = function (loadout)
 				used = weaponUsed,
 				used2 = weaponUsed2,
 				desc = Utils.GetWeaponDesc(weapon.name),
-				currInv = weapon.curr_inv
+				currInv = weapon.curr_inv,
+				dropped = 0,
 			})
 	
 			UserWeapons[newWeapon:getId()] = newWeapon

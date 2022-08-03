@@ -8,7 +8,7 @@ Config = {
   DevMode = false, -- if your server is live set this to false.  to true only if you are testing things (auto load inventory when script restart and before character selection. Alos add /getInv command)
 
   defaultlang = "en_lang",
-
+  dbupdater = true,
   ShowCharacterNameOnGive = false, -- when giving an item, show the character name of nearby players instead of their player ID. if set to false, show the player ID
 
   -- items that dont get added up torwards your max weapon count
@@ -23,6 +23,7 @@ Config = {
     "WEAPON_MELEE_LANTERN_HALLOWEEN",
     "WEAPON_KIT_METAL_DETECTOR",
     "WEAPON_MELEE_HAMMER",
+    "WEAPON_MELEE_KNIFE",
   },
   -- GOLD ITEM LIKE DOLLARS
   UseGoldItem = false, -- IF TRUE YOU HAVE GOLD IN INVENTORY LIKE DOLLARS
@@ -31,9 +32,6 @@ Config = {
   -- DEATH FUNCTIONS
   DisableDeathInventory = true, -- prevent the ability to access inventory while dead
 
-  InventorySearchable = true, -- Should the search bar appear in inventories
-  InventorySearchAutoFocus = true, -- Search autoofocuses when you type
-
   --{ I } OPEN INVENTORY
   OpenKey = 0xC1989F95,
 
@@ -41,7 +39,7 @@ Config = {
   PickupKey = 0xF84FA74F,
 
   -- LOGS
-  webhookavatar = "https://cdn3.iconfinder.com/data/icons/hand/500/Hand_give_thumbs_finger-512.png",
+  webhookavatar = "",
   webhook = "",
   discordid = true, -- turn to true if ur using discord whitelist
 
@@ -187,12 +185,12 @@ Config = {
   Weapons = {
     {
       Name     = "Lasso", -- TRANSLATE NAME ONLY
-      Desc     = "An annoyingly useful rope", -- CHANGE DESCRIPTION ONLY
+      Desc     = "Used Up When You Hogtie Someone, The Reinforced one has unlimited hogtie usage", -- CHANGE DESCRIPTION ONLY
       HashName = "WEAPON_LASSO", -- DONT TOUCH
     },
     {
       Name     = "Reinforced Lasso",
-      Desc     = "A super annoyingly useful role",
+      Desc     = "No Hogtie Limit",
       HashName = "WEAPON_LASSO_REINFORCED",
     },
     {
