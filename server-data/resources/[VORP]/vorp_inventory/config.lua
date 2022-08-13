@@ -29,6 +29,8 @@ Config = {
   UseGoldItem = false, -- IF TRUE YOU HAVE GOLD IN INVENTORY LIKE DOLLARS
   -- CHANGE IN html/js/config.js TOO !!!
 
+  InventorySearchable = true, -- Should the search bar appear in inventories
+  InventorySearchAutoFocus = true, -- Search autoofocuses when you type
   -- DEATH FUNCTIONS
   DisableDeathInventory = true, -- prevent the ability to access inventory while dead
 

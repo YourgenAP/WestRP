@@ -236,28 +236,28 @@ InventoryAPI.getUserWeapon = function(player, cb, weaponId)
 end
 
 InventoryAPI.getUserWeapons = function(player, cb)
-	local _source = player
-	local sourceCharacter = Core.getUser(_source).getUsedCharacter
-	local identifier = sourceCharacter.identifier
-	local charidentifier = sourceCharacter.charIdentifier
-	local userWeapons = UsersWeapons["default"]
+    local _source = player
+    local sourceCharacter = Core.getUser(_source).getUsedCharacter
+    local identifier = sourceCharacter.identifier
+    local charidentifier = sourceCharacter.charIdentifier
+    local usersWeapons = UsersWeapons["default"]
 
-	local userWeapons = {}
+    local userWeapons2 = {}
 
-	for _, currentWeapon in pairs(userWeapons) do
-		if currentWeapon:getPropietary() == identifier and currentWeapon:getCharId() == charidentifier then
-			local weapon = {
-				name = currentWeapon:getName(),
-				id = currentWeapon:getId(),
-				propietary = currentWeapon:getPropietary(),
-				used = currentWeapon:getUsed(),
-				ammo = currentWeapon:getAllAmmo(),
-				desc = currentWeapon:getDesc()
-			}
-			table.insert(userWeapons, weapon)
-		end
-	end
-	cb(userWeapons)
+    for _, currentWeapon in pairs(usersWeapons ) do
+        if currentWeapon:getPropietary() == identifier and currentWeapon:getCharId() == charidentifier then
+            local weapon = {
+                name = currentWeapon:getName(),
+                id = currentWeapon:getId(),
+                propietary = currentWeapon:getPropietary(),
+                used = currentWeapon:getUsed(),
+                ammo = currentWeapon:getAllAmmo(),
+                desc = currentWeapon:getDesc()
+            }
+            table.insert(userWeapons2, weapon)
+        end
+    end
+    cb(userWeapons2)
 end
 
 InventoryAPI.getWeaponBullets = function(player, cb, weaponId)
